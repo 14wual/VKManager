@@ -1,1 +1,1 @@
-# VKManager
+# VKManager - Beta
