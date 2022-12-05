@@ -13,6 +13,7 @@ ToDo:
  - Linux Setup
  - MySQL Setup
  - Linux Comand
+ - Search History Log
 
 
 ## [2.0.0] - 2022-12-X
