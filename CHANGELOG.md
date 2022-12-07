@@ -32,7 +32,7 @@ ToDo:
 ## [1.6.3] - 2022-12-07
 ### Added
  - Publication of the files
- - Added Requerments
+ - Published Requerments
  - Added Search Bar
  - Added Results Section
  - Added Search Filters
