@@ -6,17 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ToDo:
 
-## [5.0.0] - 2020-12-?
+## [5.0.0] - 2022-?
 ### Will be Added
  - Executable File (.exe)
  - Improved search filter "Search By User"
 
-## [4.0.0] - 2020-12-?
+## [4.0.0] - 2022-?
 ### Will be Added
  - Encription of the data
  - Visual Aspects
 
-## [3.0.0] - 2020-12-?
+## [3.0.0] - 2022-?
 ### Will be Added
  - Home >> Pinned Apps
  - Home >> Last Searchs
