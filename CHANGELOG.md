@@ -5,23 +5,31 @@ All notable changes to this project will be documented in this file!
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ToDo:
+
+## [5.0.0] - 2020-12-?
+### Will be Added
+ - Executable File (.exe)
+ - Improved search filter "Search By User"
+
+## [4.0.0] - 2020-12-?
+### Will be Added
+ - Encription of the data
+ - Visual Aspects
+
+## [3.0.0] - 2020-12-?
+### Will be Added
  - Home >> Pinned Apps
  - Home >> Last Searchs
- - Encription of the data
  - Section Modify Site
- - Visual Aspects
+
+## [2.0.0] - 2022-12-?
+### Will be Added
  - Linux Setup
  - MySQL Setup
  - Linux Comand
  - Search History Log
 
-
-## [2.0.0] - 2022-12-X
-### Added
- - Added Section >> Modify Site
- - Improved search filter "Search By User"
-
-## [1.6.3] - 2022-12-X
+## [1.6.3] - 2022-12-07
 ### Added
  - Publication of the files
  - Added Requerments
