@@ -9,4 +9,5 @@ After installing the requirements from this file: https://github.com/14wual/VKMa
 Create a database called mlp and a table inside this called vault
 Columns: site, usser, password
 ```
-Soon you will be able to do it executable in this file: https://github.com/14wual/VKManager/blob/main/mysql-setup.py
+Soon you will be able to do it executable in this file: https://github.com/14wual/VKManager/blob/main/mysql-setup.py <br>
+The username and password is the same as in MySQL Workbench
