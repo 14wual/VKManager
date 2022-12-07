@@ -25,6 +25,6 @@ Pip installers {
   import os
   from datetime import datetime
   import mysql.connector
-  from bullet import Password
+  import stdiomask
   
 }
