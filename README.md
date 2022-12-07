@@ -1,4 +1,4 @@
-# VKManager - Beta
+# VKManager - Beta (V1.5)
 <b>Vault Keys Manager</b>It is a password manager with interface programmed in python with the help of CustomTkinter (CTK) and MySQL.
 
 ## Install
@@ -11,3 +11,19 @@ Columns: site, usser, password
 ```
 Soon you will be able to do it executable in this file: https://github.com/14wual/VKManager/blob/main/mysql-setup.py <br>
 The username and password is the same as in MySQL Workbench
+
+## To do:
+<b>What will the next version (V2.0) bring?</b>
+  - Linux Setup
+  - MySQL Setup
+  - Linux Comand
+  - Search History Log
+  
+<b>What will the version (V3.0) bring?</b>
+  - Home >> Pinned Apps (Bug resolved)
+  - Home >> Last Searchs (?)
+  - Section Modify Site
+  
+<b>What will the version (V4.0) bring?</b>
+  - Visual Aspects
+  - Encription of the data
