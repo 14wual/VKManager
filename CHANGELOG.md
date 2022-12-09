@@ -11,33 +11,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [5.0.0] - ?
 <details>
  
-### Will be Added
+### Will be Added (Finish Release ?)
  - Executable File (.exe)
- - Improved search filter "Search By User"
+ - Encription of the data
 </details>
 
 ## [4.0.0] - 2022-?
 <details>
  
- ### Will be Added
- - Encription of the data
+ ### Will be Added (Sections Release)
  - Visual Aspects
+ - Section Modify Site
+ - Improved search filter "Search By User"
 </details>
 
 ## [3.0.0] - 2022-?
 <details>
  
-### Will be Added
+### Will be Added (Home Release)
  - Home >> Pinned Apps
  - Home >> Last Searchs
- - Section Modify Site
 </details>
 
 </details>
 
 ## [2.0.0] - 2022-12-9
  
-### Added
+### Added (Installation Release)
  - Linux Setup (sh)
  - Windows Setup (py or bat)
  - MySQL Setup (py)
