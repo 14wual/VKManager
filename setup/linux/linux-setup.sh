@@ -1,12 +1,64 @@
+banner() {
+    echo """██╗    ██╗██╗   ██╗ █████╗ ██╗     
+            ██║    ██║██║   ██║██╔══██╗██║     
+            ██║ █╗ ██║██║   ██║███████║██║     (code by WUAL)
+            ██║███╗██║██║   ██║██╔══██║██║     
+            ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+             ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝"""
+}
 
-#--------------------MySQL Installation--------------------
+pip() {
+    pips = ("stdiomask","random","customtkinter","tkinter","os","datetime","mysql.connector")
+    pipPIL = ("Image")
 
-lsb_release -a
-sudo apt update
+    for x in pips
+    do
+        pip install $x
+        pip3 install $x
 
-sudo apt install mysql-server
-sudo systemctl status mysql
-sudo mysql_secure_installation
-sudo mysql
+        python3 -m pip show $x
+    done
 
-#More Help >> https://www.solvetic.com/tutoriales/article/11746-como-instalar-mysql-en-ubuntu-22-10/
+    for x in pipPIL
+    do
+        pip install $x from PIL
+    done
+}
+
+command() {
+    sudo mkdir ~/.config
+    sudo cp ../../../main.py ~/.config
+    sudo cp vkm /bin/
+    sudo chmod +x /bin/vkm
+}
+
+mysql() {
+    python3 ../mysql/mysql-setup.py
+}
+
+all() {
+    banner()
+    command()
+    mysql()
+    pip()
+
+    vkm
+}
+
+if [[ "$1" == '--all' ]]; then 
+        all ()
+elif [[ "$1" == '--mysql' ]]; then 
+        mysql ()
+elif [[ "$1" == '--pip' ]]; then 
+        pip()
+elif [[ "$1" == '--command' ]]; then 
+        command()
+else 
+        cat <<- EOF 
+        Usage : ./linux-setup.sh --option 
+                  
+        Available Options : 
+        --all       --mysql
+        --command   --pip
+        EOF 
+fi
