@@ -8,13 +8,17 @@ cd VKManagercd/setup/linux/
 ./linux-setup.sh --all```
 ```
 
+<details>
+  <summary>Code</summary>
+  
+</details>
+
 ## Windows Install
 <b>Look out!</b> Be aware! Before configuring the script, please install MySQL Workbench or MySQL service.
 ```
 git clone https://github.com/14wual/VKManager
-cd VKManagercd/setup/mysql/
-python3 mysql-setup.py
-cd ../windows
+cd VKManagercd/setup/windows/
+python3 windows-setup.py
 ```
 
 ## To do:
