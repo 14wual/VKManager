@@ -1,6 +1,17 @@
 # VKManager - Beta (V2.5.0)
 <b>Vault Keys Manager</b> It is a password manager with interface programmed in python with the help of CustomTkinter (CTK) and MySQL.
 
+```
+888       888 888     888       d8888 888
+888   o   888 888     888      d88888 888
+888  d8b  888 888     888     d88P888 888        (code by WUAL)
+888 d888b 888 888     888    d88P 888 888            twitter.com/codewual
+888d88888b888 888     888   d88P  888 888     github.com/14wual
+88888P Y88888 888     888  d88P   888 888            youtube: WualPK
+8888P   Y8888 Y88b. .d88P d8888888888 888     
+888P     Y888  "Y88888P" d88P     888 88888888
+```
+
 See commits updates (CHANGELOG) here: <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>Link</b></a>
 
 ## Linux Install
@@ -87,3 +98,9 @@ python3 windows-setup.py
  - Section Modify Site
  
  <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>More</b></a>
+
+<h3>🚀 Know me </h3>
+
+<b>Linkeding</b> - https://www.linkedin.com/in/cpadilla10/ <br>
+<b>Twitter</b> - https://twitter.com/codewual <br>
+<b>YouTube</b> - https://www.youtube.com/channel/UC0B3mTwPPdKPEwLerauEtdg <br>
