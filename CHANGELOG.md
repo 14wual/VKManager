@@ -33,18 +33,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Section Modify Site
 </details>
 
-## [2.0.0] - 2022-12-?
-<details>
+</details>
+
+## [2.0.0] - 2022-12-9
  
 ### Will be Added
- - Linux Setup
- - MySQL Setup
- - Linux Comand
- - Search History Log
-</details>
-
-</details>
-
+ - Linux Setup (sh)
+ - Windows Setup (py or bat)
+ - MySQL Setup (py)
+ - Linux Comand (sh)
+ - Pip Setup Install (py)
 
 ## [1.6.3] - 2022-12-07
 ### Added
