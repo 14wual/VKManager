@@ -16,11 +16,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Encription of the data
 </details>
 
+## [5.0.0-pre-release]
+<details>
+ 
+### Will be Added (GUI Release)
+ - Visual Aspects
+</details>
+
 ## [4.0.0] - 2022-?
 <details>
  
  ### Will be Added (Sections Release)
- - Visual Aspects
  - Section Modify Site
  - Improved search filter "Search By User"
 </details>
