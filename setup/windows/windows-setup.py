@@ -43,13 +43,13 @@ def mysql():
                         user=usser,
                 password=passwd,
             )
-            log = True
         except:
             print("[ ✕ ] Connected Refused\nUser or Password Incorrect\nTry again.")
             
             usser = input("Write your MySQL user: ")
             passwd = stdiomask.getpass('Write your MySQL password: ')
         finally:
+            log = True
             print("[ ✓ ] Connected Correctly")
 
     mycursor = mydb.cursor()
