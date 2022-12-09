@@ -97,10 +97,9 @@ At V2.5.0 Release
 
 ## To do:
  
-### Next Release (V3.0.0)
+### Next Release (V0.4.2)
  - Home >> Pinned Apps
  - Home >> Last Searchs
- - Section Modify Site
  
  <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>More</b></a>
 
