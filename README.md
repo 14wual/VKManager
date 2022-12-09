@@ -90,6 +90,10 @@ python3 windows-setup.py
   
 </details>
 
+## Gallery
+At V2.5.0 Release
+![V2.5.0Image](https://user-images.githubusercontent.com/105047274/206784858-e3be48f5-8d6f-44d9-9dcc-391f81cd639d.png)
+
 ## To do:
  
 ### Next Release (V3.0.0)
