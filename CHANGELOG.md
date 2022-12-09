@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 2.5.0
+## Current version - 0.3.6
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <details>
  
-## [5.0.0] - ?
+## [1.0.0] - ?
 <details>
  
 ### Will be Added (Finish Release ?)
@@ -16,14 +16,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Encription of the data
 </details>
 
-## [5.0.0-pre-release]
+## [0.6.21-pre-release]
 <details>
  
 ### Will be Added (GUI Release)
  - Visual Aspects
 </details>
 
-## [4.0.0] - 2022-?
+## [0.5.2] - 2022-?
 <details>
  
  ### Will be Added (Sections Release)
@@ -31,7 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Improved search filter "Search By User"
 </details>
 
-## [3.0.0] - 2022-?
+## [0.4.2] - 2022-?
 <details>
  
 ### Will be Added (Home Release)
@@ -41,7 +41,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 </details>
 
-## [2.0.0] - 2022-12-9
+## [0.3.7] - 2022-12-10
+ 
+### Added (Installation Release)
+ - Windows Setup (bat) Upgrade
+
+## [0.3.6] - 2022-12-9
  
 ### Added (Installation Release)
  - Linux Setup (sh)
@@ -50,7 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Linux Comand (sh)
  - Pip Setup Install (py)
 
-## [1.6.3] - 2022-12-07
+## [0.2.8] - 2022-12-07
 ### Added
  - Publication of the files
  - Published Requerments
@@ -61,6 +66,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Added Section >> Add Key To Vault
  - Added Section >> Password Generator
 
-## [1.0.0] - 2022-12-3
+## [0.0.0] - 2022-12-3
 ### Added
 - Created Script
