@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 1.6.3
+## Current version - 2.5.0
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -37,7 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2.0.0] - 2022-12-9
  
-### Will be Added
+### Added
  - Linux Setup (sh)
  - Windows Setup (py or bat)
  - MySQL Setup (py)
