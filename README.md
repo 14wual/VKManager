@@ -14,47 +14,6 @@
 
 See commits updates (CHANGELOG) here: <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>Link</b></a>
 
-## Linux Install
-Install && Conf Requerements
-
-```
-git clone https://github.com/14wual/VKManager
-cd VKManagercd/setup/linux/
-./linux-setup.sh --all
-```
-
-<details>
-  <summary>Code</summary>
-  
-  ```bash
-  if [[ "$1" == '--all' ]]; then 
-        all ()
-elif [[ "$1" == '--mysql' ]]; then 
-        mysql ()
-elif [[ "$1" == '--pip' ]]; then 
-        pip()
-elif [[ "$1" == '--command' ]]; then 
-        command()
-else 
-        cat <<- EOF 
-        Usage : ./linux-setup.sh --option 
-                  
-        Available Options : 
-        --all       --mysql
-        --command   --pip
-        EOF 
-fi
-  ```
-  
-  <a href="https://github.com/14wual/VKManager/blob/main/setup/linux/linux-setup.sh"><b>See More (Full Code)</b></a>
-  
-</details>
-
-### Linux Use
-```
-vkm
-```
-
 ## Windows Install
 Install && Conf Requerements
 
@@ -97,6 +56,48 @@ windows-setup.bat
   <a href="https://github.com/14wual/VKManager/blob/main/setup/windows/windows-setup.py"><b>See More (Full Code)</b></a>
   
 </details>
+
+
+## Linux Install
+Install && Conf Requerements
+
+```
+git clone https://github.com/14wual/VKManager
+cd VKManagercd/setup/linux/
+./linux-setup.sh --all
+```
+
+<details>
+  <summary>Code</summary>
+  
+  ```bash
+  if [[ "$1" == '--all' ]]; then 
+        all ()
+elif [[ "$1" == '--mysql' ]]; then 
+        mysql ()
+elif [[ "$1" == '--pip' ]]; then 
+        pip()
+elif [[ "$1" == '--command' ]]; then 
+        command()
+else 
+        cat <<- EOF 
+        Usage : ./linux-setup.sh --option 
+                  
+        Available Options : 
+        --all       --mysql
+        --command   --pip
+        EOF 
+fi
+  ```
+  
+  <a href="https://github.com/14wual/VKManager/blob/main/setup/linux/linux-setup.sh"><b>See More (Full Code)</b></a>
+  
+</details>
+
+### Linux Use
+```
+vkm
+```
 
 ## Gallery
 At V0.3.7 Release
