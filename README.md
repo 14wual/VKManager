@@ -88,8 +88,6 @@ windows-setup.bat
   <a href="https://github.com/14wual/VKManager/blob/main/setup/windows/windows-setup.py"><b>See More (Full Code)</b></a>
   
 </details>
-  Do not EVEN use the .BAT installation file. It can create serious problems
-  
 
 ## Gallery
 At V0.3.7 Release
