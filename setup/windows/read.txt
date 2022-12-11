@@ -9,5 +9,4 @@
 
 Before making any changes, please install the MySQL Workbench or the MySQL service
 
-The .bat file can cause looping problems.
-To avoid these problems, you can run the .py file
+Run .bat File for install
