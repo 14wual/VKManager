@@ -15,6 +15,8 @@
 See commits updates (CHANGELOG) here: <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>Link</b></a>
 
 ## Linux Install
+Install && Conf Requerements
+
 ```
 git clone https://github.com/14wual/VKManager
 cd VKManagercd/setup/linux/
@@ -48,7 +50,14 @@ fi
   
 </details>
 
+### Linux Use
+```
+vkm
+```
+
 ## Windows Install
+Install && Conf Requerements
+
 <b>Look out!</b> Be aware! Before configuring the script, please install MySQL Workbench or MySQL service.
 ```
 git clone https://github.com/14wual/VKManager
