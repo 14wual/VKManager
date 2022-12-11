@@ -41,7 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 </details>
 
-## [0.3.7] - 2022-12-10
+## [0.3.7] - 2022-12-11
  
 ### Added (Installation Release)
  - Windows Setup (bat) Upgrade
