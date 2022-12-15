@@ -101,7 +101,11 @@ vkm
 
 ## Gallery
 At V0.4.2 Release
-![V0.4.2Image](https://user-images.githubusercontent.com/105047274/206784858-e3be48f5-8d6f-44d9-9dcc-391f81cd639d.png)
+
+![V0.4.2Image - SearchSection](https://user-images.githubusercontent.com/105047274/207924427-48209720-5cbb-42f9-8c8b-2d6ef4b1697e.png)
+
+
+![V0.4.2Image - HomeSection](https://user-images.githubusercontent.com/105047274/207924253-bfb56fdc-a968-4c37-8378-d527e22e65ab.png)
 
 ## To do:
  
