@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.3.7
+## Current version - 0.4.2
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -31,15 +31,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Improved search filter "Search By User"
 </details>
 
-## [0.4.2] - 2022-?
-<details>
- 
-### Will be Added (Home Release)
- - Home >> Pinned Apps
- - Home >> Last Searchs
 </details>
 
-</details>
+## [0.4.2] - 2022-12-15
+ 
+### Added (Home Release)
+ - Upgrade Home >> Pinned Apps
+ - Upgrade Home >> Last Searchs
+ - Upload 'Search log File'
+ - Fix the bug that only show me a single key (in the pinned section), now it can show infinite keys
 
 ## [0.3.7] - 2022-12-11
  
