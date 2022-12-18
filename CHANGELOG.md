@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.4.2
+## Current version - 0.4.3
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -32,6 +32,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 </details>
 
 </details>
+
+## [0.4.7] - 2022-12-15
+ 
+### Added (Post Release)
+ - Created Wiki Pages
+ - Pinned Keys Fixed Bug
+ - <a href='https://github.com/14wual/VKManager/wiki/Pinned-Keys#configuration-file-and-the-n'>Configuration file and the "\n"</a>
+ - <a href='https://github.com/14wual/VKManager/wiki/Pinned-Keys#infinite-requests'>Infinite Requests of Pinned Keys</a>
+ - Create (in teh script) the **pre** Section Modify Site
 
 ## [0.4.2] - 2022-12-15
  
