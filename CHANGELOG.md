@@ -37,6 +37,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <details>
  
+ <summary>[0.4.8] - Post Release</summary>
+ 
 ### [0.4.8] - 2022-12-18
 ### Added (Post Release of V0.4.7) 
  - Fixed the bug that only show a content of the total. It is fixed as follows >> https://github.com/14wual/VKManager/wiki/Pinned-Keys#label-above-label
