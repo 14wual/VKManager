@@ -149,11 +149,11 @@ class log(customtkinter.CTk):
         self.filter_button_3.configure(state="disabled", text="Search by pass")
 
         self.eactions_colum_frame = customtkinter.CTkFrame(self)
-        self.eactions_colum_frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 0), sticky="nsew",columnspan=3,rowspan=3)
+        self.eactions_colum_frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=3)
         self.eeactions_colum_frame = customtkinter.CTkFrame(self.eactions_colum_frame)
-        self.eeactions_colum_frame.grid(row=3, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew",columnspan=3,rowspan=2)
+        self.eeactions_colum_frame.grid(row=3, column=0, padx=(10, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=2)
         self.eeeactions_colum_frame = customtkinter.CTkFrame(self.eactions_colum_frame)
-        self.eeeactions_colum_frame.grid(row=0, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew",columnspan=3,rowspan=2)
+        self.eeeactions_colum_frame.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=2)
         self.elabel_radio_group = customtkinter.CTkLabel(master=self.eeeactions_colum_frame, text="📌 Pinned Keys: ",font=customtkinter.CTkFont(weight="bold"))
         self.elabel_radio_group.grid(row=0, column=0, columnspan=1, padx=10, pady=10, sticky="")
         self.eelabel_radio_group = customtkinter.CTkLabel(master=self.eeactions_colum_frame, text="⌚ Last Search: ",font=customtkinter.CTkFont(weight="bold"))
@@ -216,29 +216,31 @@ class log(customtkinter.CTk):
             )
 
             mycursor = mydb.cursor()
-            lista = [linea.rstrip() for linea in f]
+            lists = [linea.rstrip() for linea in f]
+            print(lists)
 
-            for y in lista:
+            for y in range(-3,len(lists)):
+                if y == 0:break
 
-                sql = "SELECT usser, password FROM vault WHERE site = '%s'" % y
+                sql = "SELECT usser, password FROM vault WHERE site = '%s'" % lists[y]
                 mycursor.execute(sql)
-                myresult = mycursor.fetchall()
+                myresuls = mycursor.fetchall()
                 
-                for x in myresult:
-                    if column_num == 5:
+                for x in myresuls:
+                    if column_num1 == 5:
                         row_num1 += 1
                         column_num1 = 0
                     
                     self.eegenerate_frame = customtkinter.CTkFrame(self.eeactions_colum_frame)
                     self.eegenerate_frame.grid(row=row_num1, column=column_num1, padx=(10, 10), pady=(10, 0), sticky="nsew")
-                    self.eelabel_radio_group = customtkinter.CTkLabel(master=self.eegenerate_frame, text=f"{y}",font=customtkinter.CTkFont(weight="bold",size=16))
+                    self.eelabel_radio_group = customtkinter.CTkLabel(master=self.eegenerate_frame, text=f"{lists[y]}",font=customtkinter.CTkFont(weight="bold",size=16))
                     self.eelabel_radio_group.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
                     self.eelabel_radio_group = customtkinter.CTkLabel(master=self.eegenerate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
                     self.eelabel_radio_group.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
                     self.eegenerate_buttom =customtkinter.CTkButton(self.eegenerate_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
                     self.eegenerate_buttom.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
-                    column_num += 1
+                    column_num1 += 1
 
         self.sesion_frame = customtkinter.CTkFrame(self)
         self.sesion_frame.grid(row=3, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew")
@@ -339,8 +341,8 @@ class log(customtkinter.CTk):
 
         mycursor = mydb.cursor()
 
-        with open(csv_history_file, 'w') as f:
-                f.write(f"{mysearch}")
+        with open(csv_history_file, 'a') as f:
+                f.write(f"\n{mysearch}")
 
         if myfilter == "site":
 
