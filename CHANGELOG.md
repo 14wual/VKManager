@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.4.3
+## Current version - 0.4.8
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -34,6 +34,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 </details>
 
 ## [0.4.7] - 2022-12-18
+
+<details>
+ 
+### [0.4.8] - 2022-12-18
+### Added (Post Release of V0.4.7) 
+ - Fixed the bug that only show a content of the total. It is fixed as follows >> https://github.com/14wual/VKManager/wiki/Pinned-Keys#label-above-label
+ - Changing the writing mode in the search history
+</details>
  
 ### Added (Post Release)
  - Created Wiki Pages
