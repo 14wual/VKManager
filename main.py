@@ -175,11 +175,12 @@ class log(customtkinter.CTk):
             )
 
             mycursor = mydb.cursor()
-            lista = [linea.rstrip() for linea in f]
+            lists = [linea.rstrip() for linea in f]
 
-            for y in lista:
+            for y in range(-3,len(lists)):
+                if y == 0:break
 
-                sql = "SELECT usser, password FROM vault WHERE site = '%s'" % y
+                sql = "SELECT usser, password FROM vault WHERE site = '%s'" % lists[y]
                 mycursor.execute(sql)
                 myresult = mycursor.fetchall()
                 
@@ -190,7 +191,7 @@ class log(customtkinter.CTk):
                     
                     self.egenerate_frame = customtkinter.CTkFrame(self.eeeactions_colum_frame)
                     self.egenerate_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 0), sticky="nsew")
-                    self.elabel_radio_group = customtkinter.CTkLabel(master=self.egenerate_frame, text=f"{y}",font=customtkinter.CTkFont(weight="bold",size=16))
+                    self.elabel_radio_group = customtkinter.CTkLabel(master=self.egenerate_frame, text=f"{lists[y]}",font=customtkinter.CTkFont(weight="bold",size=16))
                     self.elabel_radio_group.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
                     self.elabel_radio_group = customtkinter.CTkLabel(master=self.egenerate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
                     self.elabel_radio_group.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
