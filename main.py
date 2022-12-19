@@ -11,10 +11,12 @@ import mysql.connector
 customtkinter.set_appearance_mode("dark")
 
 csv_login_file = 'logs\log.csv'
-csv_history_file = 'logs\search_log.csv'
+csv_history_file = 'logs\search_history.csv'
 conf_pinned_file= 'conf\pinned.conf'
 
 now = datetime.now()
+
+radio_var_deafult = 0
 
 #--------------------3--------------------
 class log(customtkinter.CTk):
@@ -52,7 +54,7 @@ class log(customtkinter.CTk):
             now = datetime.now()
 
             with open(csv_login_file, 'a') as f:
-                f.write(f"\n{now}, {self.username_entry.get()}, {log}")
+                f.write(f"\n{now}, {self.username_entry.get()}, {authorize_log}")
 
             print(f"[ ✓ ] Connected Correctly at {now}\n")
 
@@ -69,7 +71,7 @@ class log(customtkinter.CTk):
             now = datetime.now()
 
             with open(csv_login_file, 'a') as f:
-                f.write(f"\n{now}, {self.username_entry.get()}, {log}")
+                f.write(f"\n{now}, {self.username_entry.get()}, {authorize_log}")
 
             print("[ ✕ ] Connected Refused")
 
@@ -135,18 +137,7 @@ class log(customtkinter.CTk):
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),text="Search",command=self.search_fr)
         self.main_button_1.grid(row=0, column=3, padx=(10, 10), pady=(10, 0), sticky="nsew")
 
-        self.radiobutton_frame = customtkinter.CTkFrame(self)
-        self.radiobutton_frame.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew")
-        self.radio_var = tkinter.IntVar(value=0)
-        self.label_radio_group = customtkinter.CTkLabel(master=self.radiobutton_frame, text="Search filters:",font=customtkinter.CTkFont(weight="bold"))
-        self.label_radio_group.grid(row=0, column=2, columnspan=1, padx=10, pady=10, sticky="")
-        self.filter_button_1 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=0,text="Search by site")
-        self.filter_button_1.grid(row=1, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_2 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=1,text="Search by user")
-        self.filter_button_2.grid(row=2, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3 = customtkinter.CTkRadioButton(master=self.radiobutton_frame)
-        self.filter_button_3.grid(row=3, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3.configure(state="disabled", text="Search by pass")
+        self.filter_buttons()
 
         self.eactions_colum_frame = customtkinter.CTkFrame(self)
         self.eactions_colum_frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=3)
@@ -217,7 +208,6 @@ class log(customtkinter.CTk):
 
             mycursor = mydb.cursor()
             lists = [linea.rstrip() for linea in f]
-            print(lists)
 
             for y in range(-3,len(lists)):
                 if y == 0:break
@@ -272,7 +262,7 @@ class log(customtkinter.CTk):
     #--------------------3.2 - Search--------------------
     def filter_search(self):
 
-        value = self.radio_var.get()
+        value = self.radio_var10.get()
         
         Valfilter = ""
 
@@ -303,18 +293,7 @@ class log(customtkinter.CTk):
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),text="Search",command=self.search_fr)
         self.main_button_1.grid(row=0, column=3, padx=(10, 10), pady=(10, 0), sticky="nsew")
 
-        self.radiobutton_frame = customtkinter.CTkFrame(self)
-        self.radiobutton_frame.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew")
-        self.radio_var = tkinter.IntVar(value=0)
-        self.label_radio_group = customtkinter.CTkLabel(master=self.radiobutton_frame, text="Search filters:",font=customtkinter.CTkFont(weight="bold"))
-        self.label_radio_group.grid(row=0, column=2, columnspan=1, padx=10, pady=10, sticky="")
-        self.filter_button_1 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=0,text="Search by site")
-        self.filter_button_1.grid(row=1, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_2 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=1,text="Search by user")
-        self.filter_button_2.grid(row=2, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3 = customtkinter.CTkRadioButton(master=self.radiobutton_frame)
-        self.filter_button_3.grid(row=3, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3.configure(state="disabled", text="Search by pass")
+        self.filter_buttons()
 
         self.actions_colum_frame = customtkinter.CTkFrame(self)
         self.actions_colum_frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 0), sticky="nsew",columnspan=3,rowspan=3)
@@ -325,12 +304,7 @@ class log(customtkinter.CTk):
         usser = self.username_entry.get()
         passwd = self.password_entry.get()
         
-        myf = self.radio_var.get()
-
-        if myf == 0:
-            myfilter = "site"
-        elif myf == 1:
-            myfilter = "usser"        
+        myfilter = self.filter_search()
 
         mydb = mysql.connector.connect(
             host="localhost",
@@ -350,7 +324,6 @@ class log(customtkinter.CTk):
             mycursor.execute(sql)
             myresult = mycursor.fetchall()           
             
-            empt = is_empty(myresult)
             row_num = 1
             column_num = 0
 
@@ -388,9 +361,9 @@ class log(customtkinter.CTk):
 
                     self.generate_frame = customtkinter.CTkFrame(self.actions_colum_frame)
                     self.generate_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 0), sticky="nsew")
-                    self.label_radio_group = customtkinter.CTkLabel(master=self.generate_frame, text=f"{mysearch}",font=customtkinter.CTkFont(weight="bold",size=16))
+                    self.label_radio_group = customtkinter.CTkLabel(master=self.generate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(weight="bold",size=16))
                     self.label_radio_group.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
-                    self.label_radio_group = customtkinter.CTkLabel(master=self.generate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
+                    self.label_radio_group = customtkinter.CTkLabel(master=self.generate_frame, text=f"{mysearch}",font=customtkinter.CTkFont(size=13))
                     self.label_radio_group.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
                     self.generate_buttom =customtkinter.CTkButton(self.generate_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
                     self.generate_buttom.grid(row=2, column=0, pady=10, padx=5, sticky="n")
@@ -420,6 +393,32 @@ class log(customtkinter.CTk):
         self.generate_pass.grid(row=4, column=0, pady=10, padx=20, sticky="n")
 
     #--------------------3.2 - Key Generate--------------------
+    def filter_buttons(self):
+        self.radiobutton_frame = customtkinter.CTkFrame(self)
+        self.radiobutton_frame.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew")
+        self.label_radio_group = customtkinter.CTkLabel(master=self.radiobutton_frame, text="Search filters:",font=customtkinter.CTkFont(weight="bold"))
+        self.label_radio_group.grid(row=0, column=2, columnspan=1, padx=10, pady=10, sticky="")
+        #self.filter_button_1 = customtkinter.CTkRadioButton(master=self., variable=self.radio_var2, value=0,text="Search by site",command=self.radiobutton_event)
+        #self.filter_button_1.grid(row=1, column=2, pady=10, padx=20, sticky="n")
+        #self.filter_button_2 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var2, value=1,text="Search by user",command=self.radiobutton_event)
+        #self.filter_button_2.grid(row=2, column=2, pady=10, padx=20, sticky="n")
+        self.filter_button_3 = customtkinter.CTkRadioButton(master=self.radiobutton_frame)
+        self.filter_button_3.grid(row=3, column=2, pady=10, padx=20, sticky="n")
+        self.filter_button_3.configure(state="disabled", text="Search by pass")
+
+        global radio_var_deafult
+        self.radio_var10= tkinter.IntVar(value=radio_var_deafult)
+        self.filter_button_1 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, text="Search by site",
+                                                    command=self.radiobutton_event, variable= self.radio_var10, value=0)
+        self.filter_button_2 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, text="Search by user",
+                                                    command=self.radiobutton_event, variable= self.radio_var10, value=1)
+        self.filter_button_1.grid(row=1, column=2, pady=10, padx=20, sticky="n")
+        self.filter_button_2.grid(row=2, column=2, pady=10, padx=20, sticky="n")
+    
+    def radiobutton_event(self):
+        global radio_var_deafult
+        radio_var_deafult = self.radio_var10.get()
+
     def _generatekey_event(self):
 
         let = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
@@ -473,18 +472,7 @@ class log(customtkinter.CTk):
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),text="Search",command=self.search_fr)
         self.main_button_1.grid(row=0, column=3, padx=(10, 10), pady=(10, 0), sticky="nsew")
 
-        self.radiobutton_frame = customtkinter.CTkFrame(self)
-        self.radiobutton_frame.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew")
-        self.radio_var = tkinter.IntVar(value=0)
-        self.label_radio_group = customtkinter.CTkLabel(master=self.radiobutton_frame, text="Search filters:",font=customtkinter.CTkFont(weight="bold"))
-        self.label_radio_group.grid(row=0, column=2, columnspan=1, padx=10, pady=10, sticky="")
-        self.filter_button_1 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=0,text="Search by site")
-        self.filter_button_1.grid(row=1, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_2 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=1,text="Search by user")
-        self.filter_button_2.grid(row=2, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3 = customtkinter.CTkRadioButton(master=self.radiobutton_frame)
-        self.filter_button_3.grid(row=3, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3.configure(state="disabled", text="Search by pass")
+        self.filter_buttons()
 
         self.actions_colum_frame = customtkinter.CTkFrame(self)
         self.actions_colum_frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 0), sticky="nsew",columnspan=3,rowspan=3)
@@ -553,18 +541,7 @@ class log(customtkinter.CTk):
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),text="Search",command=self.search_fr)
         self.main_button_1.grid(row=0, column=3, padx=(10, 10), pady=(10, 0), sticky="nsew")
 
-        self.radiobutton_frame = customtkinter.CTkFrame(self)
-        self.radiobutton_frame.grid(row=1, column=0, padx=(10, 10), pady=(10, 0), sticky="nsew")
-        self.radio_var = tkinter.IntVar(value=0)
-        self.label_radio_group = customtkinter.CTkLabel(master=self.radiobutton_frame, text="Search filters:",font=customtkinter.CTkFont(weight="bold"))
-        self.label_radio_group.grid(row=0, column=2, columnspan=1, padx=10, pady=10, sticky="")
-        self.filter_button_1 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=0,text="Search by site")
-        self.filter_button_1.grid(row=1, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_2 = customtkinter.CTkRadioButton(master=self.radiobutton_frame, variable=self.radio_var, value=1,text="Search by user")
-        self.filter_button_2.grid(row=2, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3 = customtkinter.CTkRadioButton(master=self.radiobutton_frame)
-        self.filter_button_3.grid(row=3, column=2, pady=10, padx=20, sticky="n")
-        self.filter_button_3.configure(state="disabled", text="Search by pass")
+        self.filter_buttons()
 
         self.actions_colum_frame = customtkinter.CTkFrame(self)
         self.actions_colum_frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 0), sticky="nsew",columnspan=3,rowspan=3)
