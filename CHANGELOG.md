@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.4.8
+## Current version - 0.5.2
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -22,16 +22,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Will be Added (GUI Release)
  - Visual Aspects
 </details>
-
-## [0.5.2] - 2022-?
-<details>
+</details> 
  
- ### Will be Added (Sections Release)
- - Section Modify Site
- - Improved search filter "Search By User"
-</details>
+## [0.5.2] - 2022-12-19
+ 
+### Added (Home Release)
+ - Fixed Login History (Login Authorization).
+ - Added Search filters (User Filter)
 
-</details>
+<details>
+Fixed Login History (Login Authorization). <br>
+[ ] Before: <br>
+2022-12-18 12:15:25.660903, example, <class 'main.log'> <br>
+[ ] After: <br>
+2022-12-18 12:37:27.714245, example, True <br>
+2022-12-18 12:37:27.714245, example, False <br>
+<br>
+Addd Search filters (User Filter) <br>
+New Feature!: Search filters. Now look up your password by username, instead of by site. <br>
+</details> 
 
 ## [0.4.7] - 2022-12-18
 
