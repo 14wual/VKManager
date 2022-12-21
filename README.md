@@ -22,7 +22,7 @@ Install && Conf Requerements
 git clone https://github.com/14wual/VKManager
 cd VKManager
 pip install requerements
-pythom VKManagercd/other/mysql/mysql-setup.py
+python VKManager/other/mysql/mysql-setup.py
 ```
 
 ## Linux Command
