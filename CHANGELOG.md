@@ -26,7 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  
 ## [0.5.2] - 2022-12-19
  
-### Added (Home Release)
+### Added (Filters Release)
  - Fixed Login History (Login Authorization).
  - Added Search filters (User Filter)
 
