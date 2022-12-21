@@ -14,57 +14,24 @@
 
 See commits updates (CHANGELOG) here: <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>Link</b></a>
 
-## Windows Install
+## Install
 Install && Conf Requerements
 
 <b>Look out!</b> Be aware! Before configuring the script, please install MySQL Workbench or MySQL service.
 ```
 git clone https://github.com/14wual/VKManager
-cd VKManagercd/setup/windows/
-windows-setup.bat
+cd VKManager
+pip install requerements
+pythom VKManagercd/other/mysql/mysql-setup.py
 ```
 
-
-<details>
-  <summary>Code</summary>
-  
-  ```python
-  for x in pip_installers:
-        try:
-            os.system(f"pip install {x}")
-        except:
-            os.system(f"pip install {x}")
-        finally:
-            print(f"[ ✓ ] {x} installed correctly")
-  ```
-  
-  ```python
-  try:
-        mlp = mysql.connector.connect(
-            host="localhost",
-            user=usser,
-            password=passwd,
-            database = database
-            )
-    except:
-        print("[ ✕ ] Manually create the database.")
-        exit()
-    finally:
-        print("[ ✓ ] Created Correctly")
-        mlp.execute("SHOW TABLES")
-  ```
-  <a href="https://github.com/14wual/VKManager/blob/main/setup/windows/windows-setup.py"><b>See More (Full Code)</b></a>
-  
-</details>
-
-
-## Linux Install
-Install && Conf Requerements
+## Linux Command
+Install && Conf the Command **"VKM"**
 
 ```
 git clone https://github.com/14wual/VKManager
 cd VKManagercd/setup/linux/
-./linux-setup.sh --all
+./linux-setup.sh --command
 ```
 
 <details>
@@ -109,9 +76,9 @@ At V0.4.2 Release
 
 ## To do:
  
-### Next Release (V0.5.2)
- - Section Modify Site
- - Improved search filter "Search By User"
+### Next Release (V0.6.2)
+ - New GUI Widgets
+ - More...
  
  <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>More</b></a>
 
