@@ -22,8 +22,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [0.8.2] - 2022-12-23
  
 ### Added (Filters Release)
- - Fixed Login History (Login Authorization).
- - Added Search filters (User Filter)
+ - Visual aspects (7)
+ - Easy switching between dark and light appearance mode
+ - A noticeable improvement in code readability [See Code](https://github.com/14wual/VKManager/blob/main/main.py)
+ - Added About file (File showing the current version) - [See Version](https://github.com/14wual/VKManager/blob/main/about/version)
+ - Add a darling frame with buttons (for updating and for darling the repository)
+ - Informative banner (version number, time in use, copy and remaining time)
+ - Posted some test files (temporary) - [See Temps](https://github.com/14wual/VKManager/tree/main/test)
+ - Programmed a more efficient code - [See Code](https://github.com/14wual/VKManager/blob/main/main.py)
+ - An easier (and cross-platform) way to install the repository
+
+<details>
+<summary>See Visual Changes Aspects </summary> 
+
+ - [Page Links Section] The buttons lower their opacity depending on the page where it is to inform the user where they are
+ - [Page Links Section] Icons have been added
+ - [Search Button] Added Icons
+ - Added two different types of icons (for dark systems and light systems)
+ - Posted icons
+ - Added the informative banner (version, remaining time, ...)
+ - A new (completely different) interface for the password generator
+ 
+ ### Gallery 
+ 
+ Before:
+ 
+ ![Image - V0.4.2 Search Page](https://user-images.githubusercontent.com/105047274/209036705-80bb06fa-44e7-401c-b674-a307f9cd3f7b.png)
+ 
+ ![Image - V0.4.2 - Home Page](https://user-images.githubusercontent.com/105047274/209036710-302f4939-de8c-47ad-a897-cb642598ec68.png)
+ 
+ After:
+ 
+ ![V0.8.2Image - Home Page](https://user-images.githubusercontent.com/105047274/209035118-a316f2d1-7223-47aa-ad3c-ea7a36f53458.png)
+
+ ![V0.8.2Image - Generate Key](https://user-images.githubusercontent.com/105047274/209035179-df54d93d-3e96-4fdf-96a4-cb51a39f776a.png)
+ 
+</details>
+
+
+
  
 ## [0.5.2] - 2022-12-19
  
