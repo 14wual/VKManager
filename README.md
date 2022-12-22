@@ -1,4 +1,4 @@
-# VKManager - Beta (V0.5.2)
+# VKManager - Beta (V0.8.2)
 <b>Vault Keys Manager</b> It is a password manager with interface programmed in python with the help of CustomTkinter (CTK) and MySQL.
 
 ```
@@ -67,20 +67,30 @@ vkm
 ```
 
 ## Gallery
-At V0.4.2 Release
 
-![V0.4.2Image - SearchSection](https://user-images.githubusercontent.com/105047274/207924427-48209720-5cbb-42f9-8c8b-2d6ef4b1697e.png)
+At V0.8.2 Release
+![V0.8.2Image - Home Page](https://user-images.githubusercontent.com/105047274/209035118-a316f2d1-7223-47aa-ad3c-ea7a36f53458.png)
 
+![V0.8.2Image - Generate Key](https://user-images.githubusercontent.com/105047274/209035179-df54d93d-3e96-4fdf-96a4-cb51a39f776a.png)
 
-![V0.4.2Image - HomeSection](https://user-images.githubusercontent.com/105047274/207924253-bfb56fdc-a968-4c37-8378-d527e22e65ab.png)
+## Last Version BV0.8.2:
+
+> Visual aspects (7) <br>
+Easy switching between dark and light appearance mode <br>
+A noticeable improvement in code readability <br>
+Added About file (File showing the current version) <br>
+Add a darling frame with buttons (for updating and for darling the repository) <br>
+Informative banner (version number, time in use, copy and remaining time) <br>
+Posted some test files (temporary) <br>
+Programmed a more efficient code <br>
+
+<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#082---2022-12-23"><b>See More (all update)</b></a>
 
 ## To do:
  
-### Next Release (V0.6.2)
- - New GUI Widgets
- - More...
+### Next Release (V0.9.0)
  
- <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>More</b></a>
+ <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>See More</b></a>
 
 <h3>🚀 Know me </h3>
 
