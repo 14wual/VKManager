@@ -83,6 +83,7 @@ Add a darling frame with buttons (for updating and for darling the repository) <
 Informative banner (version number, time in use, copy and remaining time) <br>
 Posted some test files (temporary) <br>
 Programmed a more efficient code <br>
+An easier (and cross-platform) way to install the repository
 
 <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#082---2022-12-23"><b>See More (all update)</b></a>
 
