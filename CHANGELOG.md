@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.8.2
+## Current version - 0.8.5
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -18,8 +18,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 </details> 
 
+## [0.8.5] - 2022-12-23
 
-## [0.8.2] - 2022-12-23
+### Added (Banner Release)
+
+ - Added a Chronometer
+ - Added a Date 
+ - A key Count (total)
+
+## [0.8.2] - 2022-12-22
  
 ### Added (Filters Release)
  - Visual aspects (7)
@@ -58,9 +65,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  ![V0.8.2Image - Generate Key](https://user-images.githubusercontent.com/105047274/209035179-df54d93d-3e96-4fdf-96a4-cb51a39f776a.png)
  
 </details>
-
-
-
  
 ## [0.5.2] - 2022-12-19
  
