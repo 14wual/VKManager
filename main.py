@@ -4,6 +4,7 @@ import random
 import pyperclip as clipboard
 import customtkinter
 import tkinter
+import tkinter as tk
 from PIL import Image
 from datetime import datetime
 import mysql.connector
@@ -18,6 +19,7 @@ csv_history_file = 'logs\search_history.csv'
 conf_pinned_file= 'conf\pinned.conf'
 
 now = datetime.now()
+REFRESH_INTERVAL = 200
 
 search_filter_var_value = 0
 
@@ -127,15 +129,24 @@ class app(customtkinter.CTk):
 
         with open('about/version') as v:
             version = v.readline()
+        
+        self.num_keys = self.calc_num_keys()
 
-        self.banner_label_var_1 = tkinter.IntVar(value=f"   {version} | Code By Wual ")
-        self.banner_label_var_2 = tkinter.IntVar(value=f"Time Left: 00:00:00 | Current Sesion: 00:00:00")
+        self.banner_label_var_1 = tkinter.IntVar(value=f"   {version} | Code By Wual  /")
+        self.banner_label_var_2 = tk.StringVar(self,value=self.get_formatted_elapsed_time())
+        self.banner_label_var_3 = tkinter.IntVar(value=f"/  Keys: {self.num_keys}")
 
         self.banner_label_1 = customtkinter.CTkLabel(master=self.banner_frame,textvariable=self.banner_label_var_1,font=customtkinter.CTkFont(weight="bold",size=16))
-        self.banner_label_1.grid(row = 0, column = 0,padx=(5,250),pady=5)
+        #self.banner_label_1.grid(row = 0, column = 0,padx=(5,200),pady=5)
+        self.banner_label_1.grid(row = 0, column = 0,padx=5,pady=5)
 
         self.banner_label_2 = customtkinter.CTkLabel(master=self.banner_frame,textvariable=self.banner_label_var_2, font=customtkinter.CTkFont(weight="bold",size=16))
-        self.banner_label_2.grid(row = 0, column = 1,pady=5,padx=(0,5))
+        self.banner_label_2.grid(row = 0, column = 1,pady=5,padx=5)
+
+        self.banner_label_3 = customtkinter.CTkLabel(master=self.banner_frame,textvariable=self.banner_label_var_3, font=customtkinter.CTkFont(weight="bold",size=16))
+        self.banner_label_3.grid(row = 0, column = 2,pady=5,padx=5)
+
+        self.refresh_elapsed_time()
 
     def pinned_keys(self):
 
@@ -644,6 +655,8 @@ class app(customtkinter.CTk):
 
         if authorize_log == True:
 
+            self.start_time = datetime.now()
+
             print(f"[ ✓ ] Connected Correctly at {now}\n")
 
             try:
@@ -768,6 +781,51 @@ class app(customtkinter.CTk):
         elif add_pinned == "on":
             with open(conf_pinned_file, 'a') as f:
                 f.write(f"\n{site}")
+    
+    def get_formatted_elapsed_time(self):
+        self.elapsed_seconds = (datetime.now() - self.start_time).total_seconds()
+        return self.seconds_to_seconds_minutes_and_hours(int(self.elapsed_seconds))
+
+    def seconds_to_seconds_minutes_and_hours(self,seconds):
+        hours = int(seconds / 60 / 60)
+        seconds -= hours*60*60
+        minutes = int(seconds/60)
+        seconds -= minutes*60
+        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+        
+    def date_event(self):
+        self.date = datetime.now().date()
+        self.formated_date = self.date.strftime('%A, %d de %B')
+
+    def refresh_elapsed_time(self):
+        self.date_event()
+        self.banner_label_var_2.set(value=f"{self.formated_date} | Current Sesion: {self.get_formatted_elapsed_time()}")
+        self.after(REFRESH_INTERVAL, self.refresh_elapsed_time)
+    
+    def calc_num_keys(self):
+
+        usser = self.username_entry.get()
+        passwd = self.password_entry.get()
+
+        mydb = mysql.connector.connect(
+                host="localhost",
+                user=usser,
+                password=passwd,
+                database="mlp"
+            )
+
+        mycursor = mydb.cursor()
+
+        sql = "SELECT * FROM vault"
+        mycursor.execute(sql)
+        myresult = mycursor.fetchall()
+
+        key_total = 0
+
+        for x in myresult:
+            key_total += 1
+        
+        return key_total
 
 if __name__ == "__main__":
     app = app()
