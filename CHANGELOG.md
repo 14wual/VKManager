@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.5.2
+## Current version - 0.8.2
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -16,13 +16,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  - Encription of the data
 </details>
 
-## [0.6.21-pre-release]
-<details>
- 
-### Will be Added (GUI Release)
- - Visual Aspects
-</details>
 </details> 
+
+
+## [0.8.2] - 2022-12-23
+ 
+### Added (Filters Release)
+ - Fixed Login History (Login Authorization).
+ - Added Search filters (User Filter)
  
 ## [0.5.2] - 2022-12-19
  
