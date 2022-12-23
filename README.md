@@ -1,4 +1,4 @@
-# VKManager - Beta (V0.8.5)
+# VKManager - Beta (V0.8.6)
 <b>Vault Keys Manager</b> It is a password manager with interface programmed in python with the help of CustomTkinter (CTK) and MySQL.
 
 ```
@@ -76,9 +76,11 @@ At V0.8.2 Release
 
 ## Last Version BV0.8.2:
 
-<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#082---2022-12-23"><b>See More (all update)</b></a>
+<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#082---2022-12-22"><b>See More (all update)</b></a>
 
-<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#082---2022-12-23"><b>Post Release BV0.8.5</b></a>
+<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#085---2022-12-23"><b>Post Release BV0.8.5</b></a>
+
+<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#085---2022-12-24"><b>Post Release BV0.8.6</b></a>
 
 ## To do:
 
