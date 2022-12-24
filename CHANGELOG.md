@@ -1,5 +1,5 @@
 # Changelog
-## Current version - 0.8.6
+## Current version - 0.9.3
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -8,7 +8,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <details>
 
- 
 ## [1.0.0] - ?
 <details>
  
@@ -18,6 +17,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 </details>
 
 </details> 
+
+## [0.9.3] - 2022-12-24
+
+### Added (Code (2) Release)
+
+ - Again, some new extreme code cleanup, for cleaner, more efficient code.
+ - Divided the script into different files, for a cleaner treatment and more efficient use of resources by the application
+ - Now, the script will work with temporary files, which will be deleted at the end of this activity.****
 
 ## [0.8.6] - 2022-12-24
 
@@ -50,7 +57,7 @@ python3 VKManager/other/mysql/mysql-setup.py
 
 ## [0.8.2] - 2022-12-22
  
-### Added (Filters Release)
+### Added (Big Release)
  - Visual aspects (7)
  - Easy switching between dark and light appearance mode
  - A noticeable improvement in code readability [See Code](https://github.com/14wual/VKManager/blob/main/main.py)
