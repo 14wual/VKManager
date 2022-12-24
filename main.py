@@ -10,16 +10,15 @@
 
 #--------------------Extern Imports--------------------
 import subprocess
+import pathlib
 
 #--------------------APP--------------------
 class App:
     def __init__(self):
         super().__init__()
 
-        import pathlib
-
         path = pathlib.Path(__file__).parent.absolute()
-        exec(f"{path}/app/__init__.py")
+        subprocess.call(f"{path}/app/__init__.py",shell=True)
     
 if __name__ == '__main__':
     app = App()
