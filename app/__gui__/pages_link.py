@@ -1,7 +1,17 @@
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV0.9.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
 #--------------------External Imports--------------------
 import customtkinter
 from PIL import Image
-from datetime import datetime
 
 #--------------------Intern Imports--------------------
 from __pages__ import home
