@@ -1,13 +1,21 @@
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV0.9.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
 #--------------------Extern Imports--------------------
 import customtkinter
 import os
-from datetime import datetime
 import atexit
 
 #--------------------Intern Imports--------------------
 from __pages__ import login
-
-REFRESH_INTERVAL = 200
 
 #--------------------APP--------------------
 class App(customtkinter.CTk):
@@ -26,7 +34,6 @@ class App(customtkinter.CTk):
         try:os.remove("conf/temp/credentials.tmp")
         finally:os.rmdir("conf/temp/")
         
-    
 if __name__ == '__main__':
     app = App()
     app.mainloop()
