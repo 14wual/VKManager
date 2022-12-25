@@ -1,7 +1,17 @@
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV0.9.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
 #--------------------External Imports--------------------
 import webbrowser
 import customtkinter
-from datetime import datetime
 
 #--------------------APP--------------------
 def main(self):
