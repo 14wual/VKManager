@@ -36,7 +36,7 @@ Work is already underway to resolve this problem, but it is not promised that th
 
  <summary>Example of "junk" line</summary>
 
- _And then not use the bilbiotec (in this example)_
+ <br> _And then not use the bilbiotec (in this example)_
 ```python
 import tkinter as tk
 ```
