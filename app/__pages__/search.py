@@ -1,33 +1,30 @@
-#--------------------1--------------------
-import webbrowser
-import random
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV0.9.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
+#--------------------External Imports--------------------
 import pyperclip as clipboard
 import customtkinter
-import tkinter
-import tkinter as tk
-from PIL import Image
 from datetime import datetime
 import mysql.connector
 
-#--------------------2--------------------
+#--------------------Internal Imports--------------------
 from __gui__ import filter_buttons
 
-with open('conf/appearance.conf','r') as appearance_file:
-    conf_appearance_mode = appearance_file.readline()
-    customtkinter.set_appearance_mode(conf_appearance_mode)
-
-csv_login_file = 'logs\log.csv'
+#--------------------VAR & CONS--------------------
 csv_history_file = 'logs\search_history.csv'
-conf_pinned_file= 'conf\pinned.conf'
-
-now = datetime.now()
-REFRESH_INTERVAL = 200
-
-search_filter_var_value = 0
 
 pages = ['home','addkey','generatekey','modifykey','search']
 page = pages[0]
 
+#--------------------APP--------------------
 def main(self):
     global pages; global page
 
@@ -95,7 +92,7 @@ def search(self):
                         column_num = 0
 
                     self.generate_result_frame = customtkinter.CTkFrame(self.content_frame_page_search)
-                    self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 0), sticky="nsew")
+                    self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
 
                     self.generate_key_site_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{mysearch}",font=customtkinter.CTkFont(weight="bold",size=16))
                     self.generate_key_site_label_1.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
@@ -124,7 +121,7 @@ def search(self):
                             column_num = 0
 
                         self.generate_result_frame = customtkinter.CTkFrame(self.content_frame_page_search)
-                        self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 0), sticky="nsew")
+                        self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
 
                         self.generate_key_site_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{x[0]}",font=customtkinter.CTkFont(weight="bold",size=16))
                         self.generate_key_site_label_1.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
