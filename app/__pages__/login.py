@@ -1,13 +1,26 @@
-#--------------------1--------------------
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV0.9.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
+#--------------------External Import--------------------
 import customtkinter
 from datetime import datetime
 import mysql.connector
 
-#--------------------2--------------------
+#--------------------Internal Imports--------------------
 from __pages__ import main
 
+#--------------------VAR & CON--------------------
 csv_login_file = 'logs\log.csv'
 
+#--------------------APP--------------------
 def login_gui(self):
             
     self.title("VKManager | Login")
