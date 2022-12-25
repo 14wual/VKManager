@@ -12,6 +12,11 @@
 #--------------------Extern Imports--------------------
 import customtkinter
 
+#--------------------VAR & CONST--------------------
+with open('conf/appearance.conf','r') as appearance_file:
+    conf_appearance_mode = appearance_file.readline()
+    customtkinter.set_appearance_mode(conf_appearance_mode)
+
 #--------------------APP--------------------
 def main(self):
     apprence(self)
