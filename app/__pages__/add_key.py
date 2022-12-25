@@ -1,31 +1,28 @@
-#--------------------1--------------------
-import webbrowser
-import random
-import pyperclip as clipboard
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV0.9.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
+#--------------------External Imports--------------------
 import customtkinter
 import tkinter
-import tkinter as tk
 from PIL import Image
 from datetime import datetime
 import mysql.connector
 
-#--------------------2--------------------
-with open('conf/appearance.conf','r') as appearance_file:
-    conf_appearance_mode = appearance_file.readline()
-    customtkinter.set_appearance_mode(conf_appearance_mode)
-
-csv_login_file = 'logs\log.csv'
-csv_history_file = 'logs\search_history.csv'
+#--------------------VAR & CONS--------------------
 conf_pinned_file= 'conf\pinned.conf'
-
-now = datetime.now()
-REFRESH_INTERVAL = 200
-
-search_filter_var_value = 0
 
 pages = ['home','addkey','generatekey','modifykey','search']
 page = pages[0]
 
+#--------------------APP--------------------
 def main(self):
     global pages; global page
 
@@ -41,17 +38,15 @@ def main(self):
     add_key(self)
 
 def add_key(self):
+
     self.content_frame_page_add_key = customtkinter.CTkFrame(self)
     self.content_frame_page_add_key.grid(row=1, column=1, padx=(3, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=3)
 
-    self.label_site = customtkinter.CTkLabel(self.content_frame_page_add_key,text="Write your site")
-    self.label_site.pack(padx=20, pady=(75,1))
+    self.add_key_label = customtkinter.CTkLabel(self.content_frame_page_add_key, text="Add Key",font=customtkinter.CTkFont(size=20, weight="bold"))
+    self.add_key_label.pack(padx=20, pady=(75,10))
 
     self.entry_site = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your site")
     self.entry_site.pack(padx=20, pady=10)
-
-    self.user_site = customtkinter.CTkLabel(self.content_frame_page_add_key,text="Write your user")
-    self.user_site.pack(padx=20, pady=(10,1))
 
     self.entry_user = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your username")
     self.entry_user.pack(padx=20, pady=10)
@@ -59,9 +54,6 @@ def add_key(self):
     self.key_image = customtkinter.CTkImage(light_image=Image.open("images\key.png"),
                               dark_image=Image.open("images\key.png"),
                               size=(13, 13))
-
-    self.password_site = customtkinter.CTkLabel(self.content_frame_page_add_key,text="Write your password")
-    self.password_site.pack(padx=20, pady=(10,1))
 
     self.entry_password = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your passwhord",show="*")
     self.entry_password.pack(padx=20, pady=10)
