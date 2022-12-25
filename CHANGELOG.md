@@ -18,6 +18,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 </details> 
 
+## [0.9.5] - 2022-12-26
+
+### Added ((PRE) Modify Key Release)
+
+ - Established the bases of the "Modify Password" page
+ - Visual improvements on the "Add Key" page
+ - Removal of "junk" lines in scripts
+ - All scripts Signed
+
+### ⚠︎ ALERT
+**Program error: in the generation of the frames with the passwords, when you press copy, only the last one taught is copied.**
+
+Work is already underway to resolve this problem, but it is not promised that this will be resolved soon.
+
+<details>
+
+ <summary>Example of "junk" line</summary>
+ 
+```python
+import tkinter as tk
+```
+_And then not use the bilbiotec (in this example)_
+
+```python
+with open('conf/appearance.conf','r') as appearance_file:
+    conf_appearance_mode = appearance_file.readline()
+    customtkinter.set_appearance_mode(conf_appearance_mode)
+```
+_Example of unnecessary line in most scripts_
+
+
+</details>
+
 ## [0.9.3] - 2022-12-24
 
 ### Added (Code (2) Release)
