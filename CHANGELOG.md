@@ -35,19 +35,18 @@ Work is already underway to resolve this problem, but it is not promised that th
 <details>
 
  <summary>Example of "junk" line</summary>
- 
+
+ _And then not use the bilbiotec (in this example)_
 ```python
 import tkinter as tk
 ```
-_And then not use the bilbiotec (in this example)_
 
+_Example of unnecessary line in most scripts_
 ```python
 with open('conf/appearance.conf','r') as appearance_file:
     conf_appearance_mode = appearance_file.readline()
     customtkinter.set_appearance_mode(conf_appearance_mode)
 ```
-_Example of unnecessary line in most scripts_
-
 
 </details>
 
