@@ -89,6 +89,12 @@ At V0.8.2 Release
  - Exe
  
  <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>See More</b></a>
+ 
+ ## License
+
+Copyright © 2023 Carlos Padilla.
+
+This project is [GPL](https://github.com/14wual/VKManager/blob/main/LICENSE) licensed.
 
 <h3>🚀 Know me </h3>
 
