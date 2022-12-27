@@ -130,7 +130,8 @@ def search(self):
                         self.generate_key_user_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{mysearch}",font=customtkinter.CTkFont(size=13))
                         self.generate_key_user_label_1.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
-                        self.generate_copy_button_1 =customtkinter.CTkButton(self.generate_result_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
+                        self.generate_copy_button_1 =customtkinter.CTkButton(self.generate_result_frame,text="Copy to Clipboard",
+                            command=lambda password=x[1]: clipboard.copy(password))
                         self.generate_copy_button_1.grid(row=2, column=0, pady=10, padx=5, sticky="n")
                         column_num += 1
 
