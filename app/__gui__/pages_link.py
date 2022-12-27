@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV0.9.5
+# BV0.9.7
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -14,10 +14,10 @@ import customtkinter
 from PIL import Image
 
 #--------------------Intern Imports--------------------
-from __pages__ import home
-from __pages__ import add_key
-from __pages__ import generate_key
-from __pages__ import modify_key
+from app.__pages__ import home
+from app.__pages__ import add_key
+from app.__pages__ import generate_key
+from app.__pages__ import modify_key
 
 #--------------------VAR & CONST--------------------
 pages = ['home','addkey','generatekey','modifykey','search']
