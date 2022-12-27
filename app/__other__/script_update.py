@@ -5,15 +5,14 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.0.1
+# BV1.0.0
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
 #--------------------External Imports--------------------
 import requests
 import customtkinter
-import inspect
-import os
+import webbrowser
 
 #--------------------External Imports--------------------
 import __init__
@@ -52,4 +51,5 @@ def update_dialog_destroy(self):
 
 def update_dialog_event(self):
 
-    __init__.App.update_dialog_event(self)
+    webbrowser.open_new_tab("https://github.com/14wual/VKManager/releases")
+
