@@ -25,7 +25,7 @@ def main(self):
 
     string = "VKM V1.1.1\n"
 
-    if file_contents == string:
+    if file_contents != string:
         update_dialog(self,file_contents)    
     else:
         pass
