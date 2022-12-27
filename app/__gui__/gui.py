@@ -5,16 +5,16 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV0.9.5
+# BV0.9.7
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
 #--------------------Intern Imports--------------------
-from __gui__ import apparence
-from __gui__ import banner
-from __gui__ import filter_buttons
-from __gui__ import pages_link
-from __gui__ import support_links
+from app.__gui__ import apparence
+from app.__gui__ import banner
+from app.__gui__ import filter_buttons
+from app.__gui__ import pages_link
+from app.__gui__ import support_links
 
 #--------------------APP--------------------
 def gui_filter_buttons(self):
