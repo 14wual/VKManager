@@ -17,7 +17,7 @@ import mysql.connector
 
 #--------------------Internal Imports--------------------
 from app.__gui__ import filter_buttons
-from app.__encrypt__ import desencrypt
+from app.__other__ import desencrypt
 
 #--------------------VAR & CONS--------------------
 csv_history_file = 'logs\search_history.csv'
