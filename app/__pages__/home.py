@@ -129,28 +129,28 @@ def history(self):
             mycursor = mydb.cursor()
             lists = [linea.rstrip() for linea in f]
 
-            for y in range(-1,len(lists)):
-                if y == 0:break
+            for z in range(-1,len(lists)):
+                if z == 0:break
 
-                sql = "SELECT usser, password, encrkey FROM vault WHERE site = '%s'" % lists[y]
+                sql = "SELECT usser, password, encrkey FROM vault WHERE site = '%s'" % lists[z]
                 mycursor.execute(sql)
                         
                 myresuls = mycursor.fetchall()
                     
-                for y in myresuls:
+                for p in myresuls:
                     if column_num1 == 5:
                         row_num1 += 1
                         column_num1 = 0
 
-                    passwdss = desencrypt.decrypt(y[1],y[2])
+                    passwdss = desencrypt.decrypt(p[1],p[2])
                         
                     self.log_history_generate_frame = customtkinter.CTkFrame(self.last_search_frame)
                     self.log_history_generate_frame.grid(row=row_num1, column=column_num1, padx=(10, 10), pady=(10, 10), sticky="nsew")
 
-                    self.key_site_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{lists(y)}",font=customtkinter.CTkFont(weight="bold",size=16))
+                    self.key_site_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{lists[z]}",font=customtkinter.CTkFont(weight="bold",size=16))
                     self.key_site_label.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
 
-                    self.key_user_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{y[0]}",font=customtkinter.CTkFont(size=13))
+                    self.key_user_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{p[0]}",font=customtkinter.CTkFont(size=13))
                     self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
                     self.copy_button =customtkinter.CTkButton(self.log_history_generate_frame,text="Copy to Clipboard",
