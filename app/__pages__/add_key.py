@@ -15,6 +15,7 @@ import tkinter
 from PIL import Image
 import mysql.connector
 
+#--------------------Internal Imports--------------------
 from app.__other__ import encrypt
 
 #--------------------VAR & CONS--------------------
