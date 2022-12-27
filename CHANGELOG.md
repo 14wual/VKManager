@@ -1,22 +1,55 @@
 # Changelog
-## Current version - 0.9.3
+## Current version - 1.1.1
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
-## ToDo:
+## [1.1.1] - 2022-12-27
+
+### Added ( Update Script )
+
+ - New script that checks the current version with the one you have running.
+ - Now a pop-up window will appear warning that you must update in case the versions are not the same
+
+## [1.0.0] - 2022-12-27
+
+### Added ( Encryption Release )
+
+In this (Encryption Release) version, the program officially stops being beta and becomes a complete program. All the functionality that was planned from the beginning has already been implemented, and now the only thing left is the resolution of bugs, visual improvements and functionality that is imagined along the way.
+
+- Password encryption
+
+## [0.9.7] - 2022-12-27
+
+### Added ( Clipboard Fixed Bug )
+
+ - The bug that only allows copying the last password of each site has been resolved. Now they can all be copied correctly.
+ - Removed the main.py file and changed the path of the __init__.py file to the main folder because (main.py) was an unnecessary file that only hindered the execution of the program.
+ - Modified all files with internal imports due to __init__.py file path change
+
+ - License published
+ - Posted the requirements.txt file to be able to do "_pip install requirements_"
+ - Posted project python setup file
 
 <details>
 
-## [1.0.0] - ?
-<details>
- 
-### Will be Added (Finish Release ?)
- - Executable File (.exe)
- - Encription of the data
+## This has been the solution that I have carried out to fix the clipboard bug
+
+### Before
+
+```python
+self.generate_copy_button_1 =customtkinter.CTkButton(self.generate_result_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
+self.generate_copy_button_1.grid(row=2, column=0, pady=10, padx=5, sticky="n")
+```
+
+### After
+
+```python
+self.generate_copy_button_1 =customtkinter.CTkButton(self.generate_result_frame,text="Copy to Clipboard",
+                            command=lambda password=x[1]: clipboard.copy(password))
+self.generate_copy_button_1.grid(row=2, column=0, pady=10, padx=5, sticky="n")
+```
 </details>
-
-</details> 
 
 ## [0.9.5] - 2022-12-26
 
