@@ -74,22 +74,6 @@ At V0.8.2 Release
 
 ![V0.8.2Image - Generate Key](https://user-images.githubusercontent.com/105047274/209035179-df54d93d-3e96-4fdf-96a4-cb51a39f776a.png)
 
-## Last Version BV0.8.2:
-
-<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#082---2022-12-22"><b>See More (all update)</b></a>
-
-<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#085---2022-12-23"><b>Post Release BV0.8.5</b></a>
-
-<a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md#085---2022-12-24"><b>Post Release BV0.8.6</b></a>
-
-## To do:
-
- - Modify Key (Page)
- - Encrypt
- - Exe
- 
- <a href="https://github.com/14wual/VKManager/blob/main/CHANGELOG.md"><b>See More</b></a>
- 
  ## License
 
 Copyright © 2023 Carlos Padilla.
