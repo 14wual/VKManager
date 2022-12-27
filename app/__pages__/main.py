@@ -5,20 +5,18 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV0.9.5
+# BV0.9.7
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
 #--------------------External Import--------------------
 import customtkinter
 from PIL import Image
-from datetime import datetime
-import mysql.connector
 
 #--------------------Internal Imports--------------------
-from __gui__ import gui
-from __pages__ import home
-from __pages__ import search
+from app.__gui__ import gui
+from app.__pages__ import home
+from app.__pages__ import search
 
 #--------------------VAR & CONSTR--------------------
 with open('conf/appearance.conf','r') as appearance_file:
