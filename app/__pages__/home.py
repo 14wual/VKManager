@@ -9,11 +9,15 @@
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
+# ⚠︎ This functionality is under development!!
+
 #--------------------External Imports--------------------
 import pyperclip as clipboard
 import customtkinter
 import mysql.connector
 
+#--------------------Internal Imports--------------------
+from app.__other__ import desencrypt
 
 #--------------------VAR & CONS--------------------
 csv_history_file = 'logs\search_history.csv'
@@ -72,7 +76,7 @@ def pinned_keys(self):
         for y in range(-3,len(lists)):
             if y == 0:break
 
-            sql = "SELECT usser, password FROM vault WHERE site = '%s'" % lists[y]
+            sql = "SELECT usser, password, encrkey FROM vault WHERE site = '%s'" % lists[y]
             mycursor.execute(sql)
             myresult = mycursor.fetchall()
 
@@ -83,6 +87,8 @@ def pinned_keys(self):
                 if column_num == 5:
                     row_num += 1
                     column_num = 0
+
+                passwd = desencrypt.decrypt(x[1],x[2])
                     
                 self.pinned_key_generate_frame = customtkinter.CTkFrame(self.pinned_key_frame)
                 self.pinned_key_generate_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
@@ -94,7 +100,7 @@ def pinned_keys(self):
                 self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
                 self.copy_button =customtkinter.CTkButton(self.pinned_key_generate_frame,text="Copy to Clipboard",
-                    command=lambda password=x[1]: clipboard.copy(password))
+                    command=lambda password=passwd: clipboard.copy(password))
                 self.copy_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
                 column_num += 1
@@ -126,52 +132,29 @@ def history(self):
             for y in range(-1,len(lists)):
                 if y == 0:break
 
-                sql = "SELECT usser, password FROM vault WHERE site = '%s'" % lists[y]
-                try:mycursor.execute(sql)
-                except:
-
-                    sql = "SELECT site, password FROM vault WHERE usser = '%s'" % lists[y]
-                    mycursor.execute(sql)
-                    myresultss = mycursor.fetchall()
-
-                    for x in myresultss:
-                        
-                        if column_num1 == 5:
-                            row_num1 += 1
-                            column_num1 = 0
-                        
-                        self.log_history_generate_frame = customtkinter.CTkFrame(self.last_search_frame)
-                        self.log_history_generate_frame.grid(row=row_num1, column=column_num1, padx=(10, 10), pady=(10, 10), sticky="nsew")
-
-                        self.key_site_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(weight="bold",size=16))
-                        self.key_site_label.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
-                        
-                        self.key_user_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{lists[y]}",font=customtkinter.CTkFont(size=13))
-                        self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
-
-                        self.copy_button =customtkinter.CTkButton(self.log_history_generate_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
-                        self.copy_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
-
-                        column_num1 += 1
+                sql = "SELECT usser, password, encrkey FROM vault WHERE site = '%s'" % lists[y]
+                mycursor.execute(sql)
                         
                 myresuls = mycursor.fetchall()
                     
-                for x in myresuls:
+                for y in myresuls:
                     if column_num1 == 5:
                         row_num1 += 1
                         column_num1 = 0
+
+                    passwdss = desencrypt.decrypt(y[1],y[2])
                         
                     self.log_history_generate_frame = customtkinter.CTkFrame(self.last_search_frame)
                     self.log_history_generate_frame.grid(row=row_num1, column=column_num1, padx=(10, 10), pady=(10, 10), sticky="nsew")
 
-                    self.key_site_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{lists[y]}",font=customtkinter.CTkFont(weight="bold",size=16))
+                    self.key_site_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{lists(y)}",font=customtkinter.CTkFont(weight="bold",size=16))
                     self.key_site_label.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
 
-                    self.key_user_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
+                    self.key_user_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{y[0]}",font=customtkinter.CTkFont(size=13))
                     self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
                     self.copy_button =customtkinter.CTkButton(self.log_history_generate_frame,text="Copy to Clipboard",
-                        command=lambda password=x[1]: clipboard.copy(password))
+                        command=lambda password=passwdss: clipboard.copy(password))
                     self.copy_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
                     column_num1 += 1
