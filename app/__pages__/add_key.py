@@ -13,8 +13,9 @@
 import customtkinter
 import tkinter
 from PIL import Image
-from datetime import datetime
 import mysql.connector
+
+from app.__other__ import encrypt
 
 #--------------------VAR & CONS--------------------
 conf_pinned_file= 'conf\pinned.conf'
@@ -85,8 +86,15 @@ def add_key_to_vault_event(self):
     
     mycursor = mydb.cursor()
 
-    sql = "INSERT INTO vault (site, usser, password) VALUES (%s, %s, %s)"
-    val = (f"{site}",f"{user}",f"{passw}")
+    encrypts = encrypt.encrypt(passwd)
+    sql_pass_list = []
+
+    for u in encrypts:
+        sql_pass = u.decode()
+        sql_pass_list.append(sql_pass)
+
+    sql = "INSERT INTO vault (site, usser, password, encrkey) VALUES (%s, %s, %s, %s)"
+    val = (f"{site}",f"{user}",f"{sql_pass_list[0]}",f"{sql_pass_list[1]}")
     mycursor.execute(sql, val)
 
     mydb.commit()
