@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV0.9.5
+# BV0.9.7
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -93,12 +93,12 @@ def pinned_keys(self):
                 self.key_user_label = customtkinter.CTkLabel(master=self.pinned_key_generate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
                 self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
-                self.copy_button =customtkinter.CTkButton(self.pinned_key_generate_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
+                self.copy_button =customtkinter.CTkButton(self.pinned_key_generate_frame,text="Copy to Clipboard",
+                    command=lambda password=x[1]: clipboard.copy(password))
                 self.copy_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
                 column_num += 1
                 break_for += 1
-
 
 def history(self):
 
@@ -170,7 +170,8 @@ def history(self):
                     self.key_user_label = customtkinter.CTkLabel(master=self.log_history_generate_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
                     self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
-                    self.copy_button =customtkinter.CTkButton(self.log_history_generate_frame,text="Copy to Clipboard",command=clipboard.copy(x[1]))
+                    self.copy_button =customtkinter.CTkButton(self.log_history_generate_frame,text="Copy to Clipboard",
+                        command=lambda password=x[1]: clipboard.copy(password))
                     self.copy_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
                     column_num1 += 1
