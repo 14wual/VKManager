@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.0.0
+# BV1.1.1
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -23,7 +23,7 @@ def main(self):
     response = requests.get("https://github.com/14wual/VKManager/raw/main/about/version")
     file_contents = response.text
 
-    string = "VKM V1.0.0\n"
+    string = "VKM V1.1.1\n"
 
     if file_contents == string:
         update_dialog(self,file_contents)    
