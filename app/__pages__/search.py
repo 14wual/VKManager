@@ -17,6 +17,7 @@ import mysql.connector
 
 #--------------------Internal Imports--------------------
 from app.__gui__ import filter_buttons
+from app.__encrypt__ import desencrypt
 
 #--------------------VAR & CONS--------------------
 csv_history_file = 'logs\search_history.csv'
@@ -75,10 +76,10 @@ def search(self):
 
             if myfilter == "site":
 
-                sql = "SELECT usser, password FROM vault WHERE site = '%s'" % mysearch
+                sql = "SELECT usser, password, encrkey FROM vault WHERE site = '%s'" % mysearch
                 mycursor.execute(sql)
-                myresult = mycursor.fetchall()           
-                
+                myresult = mycursor.fetchall()
+
                 row_num = 1
                 column_num = 0
                 break_for = 0
@@ -90,6 +91,8 @@ def search(self):
                     if column_num == 5:
                         row_num += 1
                         column_num = 0
+                    
+                    passwd = desencrypt.decrypt(x[1],x[2])
 
                     self.generate_result_frame = customtkinter.CTkFrame(self.content_frame_page_search)
                     self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
@@ -101,14 +104,14 @@ def search(self):
                     self.generate_key_user_label_1.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
                     self.generate_copy_button_1 =customtkinter.CTkButton(self.generate_result_frame,text="Copy to Clipboard",
-                        command=lambda password=x[1]: clipboard.copy(password))
+                        command=lambda password=passwd: clipboard.copy(password))
                     self.generate_copy_button_1.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
                     column_num += 1
 
             elif myfilter == "usser":
                         
-                sql = "SELECT site, password FROM vault WHERE usser = '%s'" % mysearch
+                sql = "SELECT site, password, encrkey FROM vault WHERE usser = '%s'" % mysearch
                 mycursor.execute(sql)
                 myresult = mycursor.fetchall()
                 
@@ -121,6 +124,8 @@ def search(self):
                             row_num += 1
                             column_num = 0
 
+                        passwd = desencrypt.decrypt(x[1],x[2])
+
                         self.generate_result_frame = customtkinter.CTkFrame(self.content_frame_page_search)
                         self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
 
@@ -131,7 +136,7 @@ def search(self):
                         self.generate_key_user_label_1.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
                         self.generate_copy_button_1 =customtkinter.CTkButton(self.generate_result_frame,text="Copy to Clipboard",
-                            command=lambda password=x[1]: clipboard.copy(password))
+                            command=lambda password=passwd: clipboard.copy(password))
                         self.generate_copy_button_1.grid(row=2, column=0, pady=10, padx=5, sticky="n")
                         column_num += 1
 
