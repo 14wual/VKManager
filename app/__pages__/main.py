@@ -17,6 +17,7 @@ from PIL import Image
 from app.__gui__ import gui
 from app.__pages__ import home
 from app.__pages__ import search
+from app.__other__ import script_update
 
 #--------------------VAR & CONSTR--------------------
 with open('conf/appearance.conf','r') as appearance_file:
@@ -35,7 +36,7 @@ def main(self):
     self.grid_columnconfigure((2, 3), weight=0)
     self.grid_rowconfigure((0, 1, 2, 3), weight=0)
 
-    self.search_image = customtkinter.CTkImage(light_image=Image.open("images\search.png"),
+    self.search_image = customtkinter.CTkImage(light_image=Image.open("images\search-dark.png"),
                               dark_image=Image.open("images\search.png"),
                               size=(10, 10))
 
@@ -46,6 +47,8 @@ def main(self):
 
     gui.main(self)
     home.main(self)
+
+    script_update.main(self)
     
 def searchs(self):
     mysearch = self.entry_search.get()
