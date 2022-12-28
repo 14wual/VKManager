@@ -13,7 +13,6 @@
 
 #--------------------External Imports--------------------
 import customtkinter
-from datetime import datetime
 import mysql.connector
 
 #--------------------Internal Imports--------------------
