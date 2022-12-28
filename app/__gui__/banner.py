@@ -26,7 +26,7 @@ def banner(self):
     self.banner_frame.grid(row=4, column=1, padx=(3, 10), pady=(10, 10), sticky="nsew",columnspan=3)
 
     with open('about/version') as v:
-        version = v.readline()
+        version = v.readline().rstrip()
 
     date_event(self)
 
