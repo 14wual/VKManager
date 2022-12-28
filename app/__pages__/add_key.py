@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.2.3
+# BV1.3.3
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -75,8 +75,11 @@ def add_key_to_vault_event(self):
     user = self.entry_user.get()
     passw = self.entry_password.get()
 
-    usser = self.username_entry.get()
-    passwd = self.password_entry.get()
+    with open("conf/temp/credentials.tmp","r") as credentials_file:
+        credentials_list = [linea.rstrip() for linea in credentials_file]
+            
+    usser = credentials_list[0]
+    passwd = credentials_list[1]
 
     mydb = mysql.connector.connect(
         host="localhost",
@@ -87,7 +90,7 @@ def add_key_to_vault_event(self):
     
     mycursor = mydb.cursor()
 
-    encrypts = encrypt.encrypt(passwd)
+    encrypts = encrypt.encrypt(passw)
     sql_pass_list = []
 
     for u in encrypts:
