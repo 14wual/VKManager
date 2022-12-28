@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.3.3
+# BV1.0.0
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -53,7 +53,7 @@ def add_key(self):
     self.entry_user = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your username")
     self.entry_user.pack(padx=20, pady=10)
 
-    self.key_image = customtkinter.CTkImage(light_image=Image.open("images\key.png"),
+    self.key_image = customtkinter.CTkImage(light_image=Image.open("images\key-dark.png"),
                               dark_image=Image.open("images\key.png"),
                               size=(13, 13))
 
