@@ -28,17 +28,17 @@ def main(self):
     page_links(self)
 
 def page_links(self):
-    self.home_image = customtkinter.CTkImage(light_image=Image.open("images\home.png"),
+    self.home_image = customtkinter.CTkImage(light_image=Image.open("images\home-dark.png"),
                                 dark_image=Image.open("images\home.png"),
                                 size=(13, 13))        
-    self.modify_image = customtkinter.CTkImage(light_image=Image.open("images\pencil.png"),
+    self.modify_image = customtkinter.CTkImage(light_image=Image.open("images\pencil-dark.png"),
                                 dark_image=Image.open("images\pencil.png"),
                                 size=(13, 13))        
-    self.key_image = customtkinter.CTkImage(light_image=Image.open("images\key.png"),
+    self.key_image = customtkinter.CTkImage(light_image=Image.open("images\key-dark.png"),
                                 dark_image=Image.open("images\key.png"),
                                 size=(13, 13))
 
-    self.plus_image = customtkinter.CTkImage(light_image=Image.open("images\plus.png"),
+    self.plus_image = customtkinter.CTkImage(light_image=Image.open("images\plus-dark.png"),
                                 dark_image=Image.open("images\plus.png"),
                                 size=(13, 13))
 
