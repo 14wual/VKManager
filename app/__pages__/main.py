@@ -71,5 +71,5 @@ def searchs(self):
     with open(csv_history_file, 'a') as f:
         f.write(f"\n{mysearch},{formatted_time},{formatted_date}")
 
-    search.main(self)
+    search.main(self,mysearch)
     self.searchtext.set("")
