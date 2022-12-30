@@ -15,7 +15,7 @@ import customtkinter
 #--------------------Internal Import--------------------
 from app.__other__ import top_today
 from app.__other__ import history
-from app.__other__ import real_time
+from app.__other__ import real_time2
 
 #--------------------APP--------------------
 def main(self,searchtext):
@@ -27,4 +27,4 @@ def main(self,searchtext):
 
         top_today.main(self)
         history.main(self)
-        real_time.main(self,searchtext)
+        real_time2.main(self,searchtext)
