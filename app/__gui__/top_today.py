@@ -38,7 +38,7 @@ def main(self,top_today):
             self.image_label.grid(row=row_num,column=0,padx=10,pady=0)
 
             self.history_item_button = customtkinter.CTkButton(self.search_panel_frame,text=x[0],
-                command=lambda:search_history_item_button_event(self),
+                command=lambda mysearch=x[0]:search_history_item_button_event(self,mysearch),
                 width=420,height=32,border_width=0,anchor="w",fg_color="transparent")
             self.history_item_button.grid(row=row_num,column=1,padx=10,pady=0)
             
@@ -49,10 +49,8 @@ def main(self,top_today):
 
             row_num += 1
 
-def search_history_item_button_event(self):
+def search_history_item_button_event(self,mysearch):
     
-    mysearch = self.searchtext.get()
-
     now = datetime.now()
     formatted_time = now.strftime("%d/%m/%Y %H:%M:%S")
     formatted_date = now.strftime("%d/%m/%Y")
@@ -60,8 +58,7 @@ def search_history_item_button_event(self):
     with open(csv_history_file, 'a') as f:
         f.write(f"\n{mysearch},{formatted_time},{formatted_date}")
 
-    search.main(self)
-    self.searchtext.set("")
+    search.main(self,mysearch)
 
 def label_count(count_int):
     return f"Total: {count_int}"
