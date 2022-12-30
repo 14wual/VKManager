@@ -15,11 +15,11 @@ import customtkinter
 #--------------------Internal Import--------------------
 from app.__other__ import top_today
 from app.__other__ import history
-from app.__other__ import real_time2
+from app.__gui__ import gui_real_time
 
 #--------------------APP--------------------
 def main(self,searchtext):
-    if searchtext == "":self.search_panel_frame.grid_forget()
+    if not searchtext:self.search_panel_frame.grid_forget()
     elif searchtext != "":
 
         self.search_panel_frame = customtkinter.CTkFrame(master=self)
@@ -27,4 +27,4 @@ def main(self,searchtext):
 
         top_today.main(self)
         history.main(self)
-        real_time2.main(self,searchtext)
+        gui_real_time.main(self,searchtext)
