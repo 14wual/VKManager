@@ -1,7 +1,20 @@
+# ██╗    ██╗██╗   ██╗ █████╗ ██╗     
+# ██║    ██║██║   ██║██╔══██╗██║     
+# ██║ █╗ ██║██║   ██║███████║██║     (code by wual)
+# ██║███╗██║██║   ██║██╔══██║██║     
+# ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
+#  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+# BV1.3.5
+# See proyect >> https://github.com/14wual/VKManager
+# Follow me >> https://twitter.com/codewual
+
+#--------------------External Import--------------------
 import customtkinter
 import tkinter as tk
 from PIL import Image
 
+#--------------------APP--------------------
 def main(self,real_time_search):
 
     self.search_image = customtkinter.CTkImage(light_image=Image.open("images/search-dark.png"),
