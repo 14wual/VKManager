@@ -54,10 +54,8 @@ def search_history_item_button_event(self,mysearch):
     with open(csv_history_file, 'a') as f:
         f.write(f"\n{mysearch},{formatted_time},{formatted_date}")
 
-    search.main(self)
-    self.searchtext.set("")
+    search.main(self,mysearch)
     
-
 def label_time(time_string):
 
     time = datetime.strptime(time_string, "%d/%m/%Y %H:%M:%S")
