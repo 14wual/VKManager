@@ -17,6 +17,8 @@ See commits updates (CHANGELOG) here: <a href="https://github.com/14wual/VKManag
 ## Install
 Install && Conf Requerements
 
+**Please read this file carefully:** [Link](https://github.com/14wual/VKManager/wiki/Installation)
+
 <b>Look out!</b> Be aware! Before configuring the script, please install MySQL Workbench or MySQL service.
 ```
 git clone https://github.com/14wual/VKManager
