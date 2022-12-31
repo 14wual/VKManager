@@ -47,9 +47,11 @@ def add_key(self):
     self.add_key_label = customtkinter.CTkLabel(self.content_frame_page_add_key, text="Add Key",font=customtkinter.CTkFont(size=20, weight="bold"))
     self.add_key_label.pack(padx=20, pady=(75,10))
 
+    self.entry_site_var = tkinter.StringVar()
     self.entry_site = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your site")
     self.entry_site.pack(padx=20, pady=10)
 
+    self.entry_user_var = tkinter.StringVar()
     self.entry_user = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your username")
     self.entry_user.pack(padx=20, pady=10)
 
@@ -57,11 +59,11 @@ def add_key(self):
                               dark_image=Image.open("images\key.png"),
                               size=(13, 13))
 
-    self.entry_password = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your passwhord",show="*")
+    self.entry_password_var = tkinter.StringVar()
+    self.entry_password = customtkinter.CTkEntry(self.content_frame_page_add_key, placeholder_text="Enter your password",show="*")
     self.entry_password.pack(padx=20, pady=10)
 
     self.add_to_pinned_var = tkinter.StringVar(value="off")
-    
     self.add_to_pinned_checkbox = customtkinter.CTkCheckBox(self.content_frame_page_add_key, text="Add to Pinned Keys",
                                         variable=self.add_to_pinned_var, onvalue="on", offvalue="off")
     self.add_to_pinned_checkbox.pack(padx=20, pady=10)
@@ -70,7 +72,7 @@ def add_key(self):
     self.add_key_button.pack(padx=20, pady=10)
 
 def add_key_to_vault_event(self):
-        
+    
     site = self.entry_site.get()
     user = self.entry_user.get()
     passw = self.entry_password.get()
@@ -110,3 +112,8 @@ def add_key_to_vault_event(self):
     elif add_pinned == "on":
         with open(conf_pinned_file, 'a') as f:
             f.write(f"\n{site}")
+
+    self.added_key_label = customtkinter.CTkLabel(self.content_frame_page_add_key, text="Added key",font=customtkinter.CTkFont(weight="bold"),text_color="green")
+    self.added_key_label.pack(padx=20, pady=10)
+
+    self.add_to_pinned_var.set("off")
