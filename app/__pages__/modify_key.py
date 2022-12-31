@@ -5,11 +5,9 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.2.3
+# BV1.3.8
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
-
-# ⚠︎ This functionality is under development!!
 
 #--------------------External Imports--------------------
 import customtkinter
