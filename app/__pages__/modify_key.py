@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.2.3
+# BV1.3.5
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -145,3 +145,5 @@ def modify_key_event(self,site,user,passwds,encrkey):
     values = (new_user, encrypt_pass[0], encrypt_pass[1], user, passwds, site, encrkey)
     mycursor.execute(sql, values)
     mydb.commit()
+
+    self.modify_key_window.destroy()
