@@ -13,6 +13,7 @@ setup(
         'mysql.connector',
         'pillow',
         'pyperclip',
+        'cryptography',
     ],
     project_urls={
         'Bug Reports': 'https://github.com/14wual/VKManager/issues',
