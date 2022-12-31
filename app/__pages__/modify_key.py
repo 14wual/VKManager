@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.3.5
+# BV1.2.3
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -14,6 +14,8 @@
 #--------------------External Imports--------------------
 import customtkinter
 import mysql.connector
+from PIL import Image
+import tkinter
 
 #--------------------Internal Imports--------------------
 from app.__other__ import encrypt
@@ -48,6 +50,9 @@ def modify_key(self):
     self.modify_key_main_button_1 = customtkinter.CTkButton(master=self.content_frame_page_modify_key, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),text="Search",command=lambda:modify_key_search(self),image=self.search_image)
     self.modify_key_main_button_1.grid(row=0, column=3, padx=(10, 10), pady=(10, 0), sticky="nsew")
 
+def is_list_empty(list):
+    return list == []
+
 def modify_key_search(self):
     
     with open("conf/temp/credentials.tmp","r") as credentials_file:
@@ -78,28 +83,42 @@ def modify_key_search(self):
     column_num = 0      
     break_for = 0
 
-    for x in myresult:
+    if is_list_empty(myresult) == True:
 
-        if break_for == 15:break
+        self.x_image = customtkinter.CTkImage(light_image=Image.open("images\cross.png"),
+                      dark_image=Image.open("images\cross.png"),
+                      size=(130, 130))
 
-        if column_num == 5:
-            row_num += 1
-            column_num = 0
+        self.no_content_image = customtkinter.CTkLabel(self.content_frame_page_search,image=self.x_image,text='')
+        self.no_content_image.place(relx=0.5,rely=0.4,anchor=tkinter.CENTER)
 
-        self.generate_result_frame = customtkinter.CTkFrame(self.content_frame_page_search)
-        self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
+        self.no_content_var = tkinter.IntVar(value=f"There are no results for {mysearch}")
+        self.no_content_label = customtkinter.CTkLabel(self.content_frame_page_search,textvariable=self.no_content_var,font=customtkinter.CTkFont(weight="bold",size=16))
+        self.no_content_label.place(relx=0.5,rely=0.9,anchor=tkinter.CENTER)
+    else:
 
-        self.generate_key_site_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{mysearch}",font=customtkinter.CTkFont(weight="bold",size=16))
-        self.generate_key_site_label_1.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
+        for x in myresult:
 
-        self.generate_key_user_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
-        self.generate_key_user_label_1.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
+            if break_for == 15:break
 
-        self.modify_button =customtkinter.CTkButton(self.generate_result_frame,text="Modify ⭧",command=lambda site=mysearch,user=x[0],passwd=x[1],encrkey=x[2]:modify_key_dialog(self,site,user,passwd,encrkey))
-        self.modify_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
+            if column_num == 5:
+                row_num += 1
+                column_num = 0
 
-        column_num += 1
-        break_for += 1
+            self.generate_result_frame = customtkinter.CTkFrame(self.content_frame_page_search)
+            self.generate_result_frame.grid(row=row_num, column=column_num, padx=(10, 10), pady=(10, 10), sticky="nsew")
+
+            self.generate_key_site_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{mysearch}",font=customtkinter.CTkFont(weight="bold",size=16))
+            self.generate_key_site_label_1.grid(row=0, column=0, columnspan=1, padx=10, pady=(5,0), sticky="")
+
+            self.generate_key_user_label_1 = customtkinter.CTkLabel(master=self.generate_result_frame, text=f"{x[0]}",font=customtkinter.CTkFont(size=13))
+            self.generate_key_user_label_1.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
+
+            self.modify_button =customtkinter.CTkButton(self.generate_result_frame,text="Modify ⭧",command=lambda site=mysearch,user=x[0],passwd=x[1],encrkey=x[2]:modify_key_dialog(self,site,user,passwd,encrkey))
+            self.modify_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
+
+            column_num += 1
+            break_for += 1
 
 def modify_key_dialog(self,site,user,passwd,encrkey):
 
