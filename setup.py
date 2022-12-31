@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='VKManager',
-    version='0.9.7',
+    version='1.3.8',
     description='Vault Keys Manager It is a password manager with interface programmed in python with the help of CustomTkinter (CTK) and MySQL.',
     url='https://github.com/14wual/VKManager',
     author='Carlos Padilla Labella',
