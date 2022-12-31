@@ -3,3 +3,4 @@ mysql.connector~=2.2.9
 Pillow~=9.3.0
 pyperclip~=1.8.2
 mysql-connector-python~=8.0.31
+cryptography~=38.0.4
