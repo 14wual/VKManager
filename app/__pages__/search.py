@@ -47,7 +47,7 @@ def is_list_empty(list):
 
 def search(self,mysearch):
 
-        with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
+        with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
             credentials_list = [linea.rstrip() for linea in credentials_file]
         
         usser = credentials_list[0]
