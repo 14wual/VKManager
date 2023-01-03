@@ -17,6 +17,7 @@ import mysql.connector
 
 #--------------------Internal Imports--------------------
 from app.__other__ import encrypt
+from app.__other__ import desencrypt
 
 #--------------------VAR & CONS--------------------
 conf_pinned_file= 'conf\pinned.conf'
@@ -77,16 +78,10 @@ def add_key_to_vault_event(self):
     user = self.entry_user.get()
     passw = self.entry_password.get()
 
-    with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
-        credentials_list = [linea.rstrip() for linea in credentials_file]
-            
-    usser = credentials_list[0]
-    passwd = credentials_list[1]
-
     mydb = mysql.connector.connect(
         host="localhost",
-        user=usser,
-        password=passwd,
+        user=self.credentials_usser,
+        password=self.credentials_passwd,
         database="mlp"
     )
     
