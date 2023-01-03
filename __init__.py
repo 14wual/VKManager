@@ -18,6 +18,7 @@ import os
 import atexit
 import tkinter.messagebox
 from datetime import datetime
+import tempfile
 
 # --------------------Intern Imports--------------------
 # Import the login script
@@ -36,11 +37,12 @@ class App(customtkinter.CTk):
         # We will create a folder and the respective temporary file to temporarily save the credentials 
         # and be able to transfer them between the different files that make it up.
         #In version 1.6.2 the deletion of these files has been added, also at the start of the app
-        try:os.mkdir("conf/temp/")
+        self.temp_dir = tempfile.gettempdir()
+        try:os.mkdir(f"{self.temp_dir}/vkm/")
         except:
-            try:os.remove("conf/temp/credentials.tmp")
-            finally:os.rmdir("conf/temp/")
-        finally:open("conf/temp/credentials.tmp","w")
+            try:os.remove(f"{self.temp_dir}/vkm/credentials.tmp")
+            finally:os.rmdir(f"{self.temp_dir}/vkm/");os.mkdir("C:/Windows/Temp/vkm/")
+        finally:open(f"{self.temp_dir}/vkm/credentials.tmp","w")
         
         # We call the script "login". We call the function responsible for logging in and we pass the root
         # object "self" to it.
@@ -59,8 +61,8 @@ class App(customtkinter.CTk):
         # If we want to reopen the program without having any errors, we must correctly delete the temporary 
         # directory, because if it is not deleted correctly, the __init__ function will try to execute the command
         #  "os.mkdir("conf/temp/") " and if this cannot be done, an error will be returned.
-        try:os.remove("conf/temp/credentials.tmp")
-        finally:os.rmdir("conf/temp/")
+        try:os.remove(f"{self.temp_dir}/vkm/credentials.tmp")
+        finally:os.rmdir(f"{self.temp_dir}/vkm/")
 
         # We calculate the time of use in the program in this session
         current_time_sesion = datetime.now() - time
