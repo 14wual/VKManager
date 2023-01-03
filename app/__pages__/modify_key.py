@@ -19,6 +19,7 @@ import tkinter
 
 #--------------------Internal Imports--------------------
 from app.__other__ import encrypt
+from app.__other__ import desencrypt
 
 #--------------------VAR & CONST--------------------
 pages = ['home','addkey','generatekey','modifykey','search']
@@ -147,7 +148,7 @@ def modify_key_event(self,site,user,passwds,encrkey):
         credentials_list = [linea.rstrip() for linea in credentials_file]
             
     usser = credentials_list[0]
-    passwd = credentials_list[1]
+    passwd = desencrypt.decrypt(credentials_list[1],credentials_list[2])
 
     mydb = mysql.connector.connect(
         host="localhost",
