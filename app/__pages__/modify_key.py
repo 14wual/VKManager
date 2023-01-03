@@ -143,7 +143,7 @@ def modify_key_event(self,site,user,passwds,encrkey):
     new_user = self.change_username_entry.get()
     new_password = self.change_key_entry.get()
 
-    with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
+    with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
         credentials_list = [linea.rstrip() for linea in credentials_file]
             
     usser = credentials_list[0]
