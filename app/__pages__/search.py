@@ -20,6 +20,7 @@ from PIL import Image
 #--------------------Internal Imports--------------------
 from app.__gui__ import filter_buttons
 from app.__other__ import desencrypt
+from app.__gui__ import pages_link
 
 #--------------------VAR & CONS--------------------
 csv_history_file = 'logs\search_history.csv'
@@ -46,6 +47,9 @@ def is_list_empty(list):
     return list == []
 
 def search(self,mysearch):
+
+    if not mysearch:pages_link.change_to_home(self)
+    else:
 
         mydb = mysql.connector.connect(
             host="localhost",
