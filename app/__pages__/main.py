@@ -48,7 +48,7 @@ csv_history_file = 'logs\search_history.csv'
 #--------------------APP--------------------
 def callback(self,searchtext):
     # Function in charge of making the callback to real time
-    real_time.main(self,searchtext.get())
+    search.main(self,searchtext.get())
 
 def main(self):
 
