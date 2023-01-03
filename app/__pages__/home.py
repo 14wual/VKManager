@@ -69,7 +69,7 @@ def pinned_keys(self):
 
     with open(conf_pinned_file, 'r') as f:
 
-        with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
+        with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
             credentials_list = [linea.rstrip() for linea in credentials_file]
             
         usser = credentials_list[0]
@@ -125,7 +125,7 @@ def history(self):
 
         with open(csv_history_file, 'r') as f:
 
-            with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
+            with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
                 credentials_list = [linea.rstrip() for linea in credentials_file]
             
             usser = credentials_list[0]
