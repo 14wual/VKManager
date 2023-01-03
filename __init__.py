@@ -38,12 +38,7 @@ class App(customtkinter.CTk):
         # and be able to transfer them between the different files that make it up.
         #In version 1.6.2 the deletion of these files has been added, also at the start of the app
         self.temp_dir = tempfile.gettempdir()
-        try:os.mkdir(f"{self.temp_dir}/vkm/")
-        except:
-            try:os.remove(f"{self.temp_dir}/vkm/credentials.tmp")
-            finally:os.rmdir(f"{self.temp_dir}/vkm/");os.mkdir("C:/Windows/Temp/vkm/")
-        finally:open(f"{self.temp_dir}/vkm/credentials.tmp","w")
-        
+
         # We call the script "login". We call the function responsible for logging in and we pass the root
         # object "self" to it.
         login.login(self)
@@ -57,12 +52,6 @@ class App(customtkinter.CTk):
 
     def on_closing(self,time):
         # This function is in charge of carrying out all the necessary actions to close the program correctly
-
-        # If we want to reopen the program without having any errors, we must correctly delete the temporary 
-        # directory, because if it is not deleted correctly, the __init__ function will try to execute the command
-        #  "os.mkdir("conf/temp/") " and if this cannot be done, an error will be returned.
-        try:os.remove(f"{self.temp_dir}/vkm/credentials.tmp")
-        finally:os.rmdir(f"{self.temp_dir}/vkm/")
 
         # We calculate the time of use in the program in this session
         current_time_sesion = datetime.now() - time
