@@ -47,16 +47,10 @@ def is_list_empty(list):
 
 def search(self,mysearch):
 
-        with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
-            credentials_list = [linea.rstrip() for linea in credentials_file]
-        
-        usser = credentials_list[0]
-        passwd = desencrypt.decrypt(credentials_list[1],credentials_list[2])
-
         mydb = mysql.connector.connect(
             host="localhost",
-            user=usser,
-            password=passwd,
+            user=self.credentials_usser,
+            password=self.credentials_passwd,
             database="mlp"
         )
 
