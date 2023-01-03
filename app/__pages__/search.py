@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.3.8
+# BV0.9.7
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -47,7 +47,7 @@ def is_list_empty(list):
 
 def search(self,mysearch):
 
-        with open("conf/temp/credentials.tmp","r") as credentials_file:
+        with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
             credentials_list = [linea.rstrip() for linea in credentials_file]
         
         usser = credentials_list[0]
