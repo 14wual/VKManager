@@ -51,7 +51,7 @@ def search(self,mysearch):
             credentials_list = [linea.rstrip() for linea in credentials_file]
         
         usser = credentials_list[0]
-        passwd = credentials_list[1]
+        passwd = desencrypt.decrypt(credentials_list[1],credentials_list[2])
 
         mydb = mysql.connector.connect(
             host="localhost",
