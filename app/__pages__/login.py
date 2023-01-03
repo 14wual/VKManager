@@ -17,6 +17,7 @@ import mysql.connector
 # --------------------Internal Imports--------------------
 # Imports the script in charge of running all the modules of the program
 from app.__pages__ import main
+from app.__other__ import encrypt
 
 # --------------------VAR & CON--------------------
 # Assigns the path to the log file in charge of collecting the login information [date and time,
@@ -76,8 +77,8 @@ def login_authorize(self):
         
         # We will write the temporary login file for later use. It will write the username and password. 
         # In version 1.7.X all this information will be encrypted.
-        with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
-            credentials_file.write(f"{usser}\n{passwd}")
+        self.credentials_usser = usser
+        self.credentials_passwd = passwd
         
         # Now we remove the frame in charge of the Login GUI so that it does not overlap with the main frame
         try:
