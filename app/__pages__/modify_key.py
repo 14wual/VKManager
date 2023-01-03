@@ -5,9 +5,11 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.3.8
+# BV1.2.3
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
+
+# ⚠︎ This functionality is under development!!
 
 #--------------------External Imports--------------------
 import customtkinter
@@ -53,7 +55,7 @@ def is_list_empty(list):
 
 def modify_key_search(self):
     
-    with open("conf/temp/credentials.tmp","r") as credentials_file:
+    with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
         credentials_list = [linea.rstrip() for linea in credentials_file]
     
     mysearch = self.modify_key_entry_search.get()
@@ -141,7 +143,7 @@ def modify_key_event(self,site,user,passwds,encrkey):
     new_user = self.change_username_entry.get()
     new_password = self.change_key_entry.get()
 
-    with open("conf/temp/credentials.tmp","r") as credentials_file:
+    with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
         credentials_list = [linea.rstrip() for linea in credentials_file]
             
     usser = credentials_list[0]
