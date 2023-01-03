@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.3.8
+# BV1.0.0
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -77,7 +77,7 @@ def add_key_to_vault_event(self):
     user = self.entry_user.get()
     passw = self.entry_password.get()
 
-    with open("conf/temp/credentials.tmp","r") as credentials_file:
+    with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
         credentials_list = [linea.rstrip() for linea in credentials_file]
             
     usser = credentials_list[0]
