@@ -76,7 +76,7 @@ def login_authorize(self):
         
         # We will write the temporary login file for later use. It will write the username and password. 
         # In version 1.7.X all this information will be encrypted.
-        with open("conf/temp/credentials.tmp","w") as credentials_file:
+        with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
             credentials_file.write(f"{usser}\n{passwd}")
         
         # Now we remove the frame in charge of the Login GUI so that it does not overlap with the main frame
