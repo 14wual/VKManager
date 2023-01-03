@@ -1,11 +1,27 @@
 # Changelog
-## Current version - 1.2.2
+## Current version - 1.4.7
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+
+## [1.4.7] - 2023-1-3
+
+### Added ( B.F. & Credencitals Release )
+
+- Removed the Login Error gui function, added in a different way to save resources.
+- Removed the temporary files, now the credentials will be transferred by the self object, through variables.
+- Created the wikis https://github.com/14wual/VKManager/wiki
+- Commented out the various scripts
+
+## [1.3.9] - 2023-1-1
+
+### Added (  MOn Closing (PRE) )
+Added a dialog box, which opens when closing the app where it will show the time that the app has been active
+
 ## [1.3.8] - 2022-12-31
 
+### Added
  1. Added a new box, in the search bar.
  1.2 This box is displayed when writing to the "search_entry" of the main.
  1.3 This box adds search buttons with:
