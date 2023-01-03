@@ -56,13 +56,13 @@ def is_list_empty(list):
 
 def modify_key_search(self):
     
-    with open(f"{self.temp_dir}/vkm/credentials.tmp","w") as credentials_file:
+    with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
         credentials_list = [linea.rstrip() for linea in credentials_file]
     
     mysearch = self.modify_key_entry_search.get()
             
     usser = credentials_list[0]
-    passwd = credentials_list[1]
+    passwd = desencrypt.decrypt(credentials_list[1],credentials_list[2])
 
     mydb = mysql.connector.connect(
         host="localhost",
