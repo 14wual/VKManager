@@ -56,18 +56,12 @@ def is_list_empty(list):
 
 def modify_key_search(self):
     
-    with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
-        credentials_list = [linea.rstrip() for linea in credentials_file]
-    
     mysearch = self.modify_key_entry_search.get()
             
-    usser = credentials_list[0]
-    passwd = desencrypt.decrypt(credentials_list[1],credentials_list[2])
-
     mydb = mysql.connector.connect(
         host="localhost",
-        user=usser,
-        password=passwd,
+        user=self.credentials_usser,
+        password=self.credentials_passwd,
         database="mlp"
     )
 
@@ -144,16 +138,10 @@ def modify_key_event(self,site,user,passwds,encrkey):
     new_user = self.change_username_entry.get()
     new_password = self.change_key_entry.get()
 
-    with open(f"{self.temp_dir}/vkm/credentials.tmp","r+") as credentials_file:
-        credentials_list = [linea.rstrip() for linea in credentials_file]
-            
-    usser = credentials_list[0]
-    passwd = desencrypt.decrypt(credentials_list[1],credentials_list[2])
-
     mydb = mysql.connector.connect(
         host="localhost",
-        user=usser,
-        password=passwd,
+        user=self.credentials_usser,
+        password=self.credentials_passwd,
         database="mlp"
     )
 
