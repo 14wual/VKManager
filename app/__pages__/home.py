@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV0.9.7
+# BV1.5.2
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -14,8 +14,11 @@
 #--------------------External Imports--------------------
 # The pyperclip library is the one that will allow us to copy the passwords to the clipboard.
 import pyperclip as clipboard
+from tkinter import *
 import customtkinter
 import mysql.connector
+from PIL import Image
+import csv
 
 #--------------------Internal Imports--------------------
 # We import the script to decrypt our passwords.
@@ -57,14 +60,14 @@ def home(self):
         self.pinned_key_frame = customtkinter.CTkFrame(self.content_frame_page_home)
         self.pinned_key_frame.grid(row=0, column=0, padx=(10, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=2)
         self.pinned_key_label = customtkinter.CTkLabel(master=self.pinned_key_frame, text="📌 Pinned Keys: ",font=customtkinter.CTkFont(weight="bold"))
-        self.pinned_key_label.grid(row=0, column=0, columnspan=1, padx=10, pady=10, sticky="")
+        self.pinned_key_label.grid(row=0, column=1, columnspan=1, padx=10, pady=10, sticky="")
 
         pinned_keys(self)
         history(self)
 
 def pinned_keys(self):
 
-    row_num = 1
+    row_num = 0
     column_num = 0
 
     with open(conf_pinned_file, 'r') as f:
@@ -127,10 +130,14 @@ def history(self):
             )
 
             mycursor = mydb.cursor()
-            lists = [linea.rstrip() for linea in f]
+            
+            lists = []
+            reader = csv.reader(f)
+            
+            for row in reader:lists.append(row)
 
             for z in range(-1,len(lists)):
-                print(z)
+                
                 if z == 0:break
 
                 sql = "SELECT usser, password, encrkey FROM vault WHERE site = '%s'" % lists[z][0]
@@ -155,7 +162,7 @@ def history(self):
                     self.key_user_label.grid(row=1, column=0, columnspan=1, padx=10, pady=0, sticky="")
 
                     self.copy_button =customtkinter.CTkButton(self.log_history_generate_frame,text="Copy to Clipboard",
-                        command=lambda password=passwdss: clipboard.copy(password))
+                        command=lambda passwordsss=passwdss: clipboard.copy(passwordsss))
                     self.copy_button.grid(row=2, column=0, pady=10, padx=5, sticky="n")
 
                     column_num1 += 1
