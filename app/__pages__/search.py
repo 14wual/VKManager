@@ -25,12 +25,9 @@ from app.__gui__ import pages_link
 #--------------------VAR & CONS--------------------
 csv_history_file = 'logs\search_history.csv'
 
-pages = ['home','addkey','generatekey','modifykey','search']
-page = pages[0]
-
 #--------------------APP--------------------
 def main(self,mysearch):
-    global pages; global page
+    """Search for the currently active frame to forget the grid and call the function in charge of displaying the search results"""
 
     try:self.content_frame_page_home.grid_forget()
     except:
@@ -39,14 +36,19 @@ def main(self,mysearch):
             try:self.content_frame_page_add_key.grid_forget()
             except:self.content_frame_page_generate_key.grid_forget()
     finally:
-        page = pages[-1]
+        self.page = self.pages[-1]
 
     search(self,mysearch)
 
 def is_list_empty(list):
+    """Returns True or False depending on whether the variable has content or is empty."""
     return list == []
 
 def search(self,mysearch):
+    """Generates the frame of the page and displays the search results. 
+    Check if they are empty and create conditional loops accordingly.
+    
+    If there are no searches, return to the last page."""
 
     if not mysearch:pages_link.change_to_home(self)
     else:
@@ -66,6 +68,10 @@ def search(self,mysearch):
 
             self.content_frame_page_search = customtkinter.CTkFrame(self)
             self.content_frame_page_search.grid(row=1, column=1, padx=(3, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=3)
+    
+            self.showeye_image = customtkinter.CTkImage(light_image=Image.open("images\eye-dark.png"),
+                              dark_image=Image.open("images\eye-dark.png"),
+                              size=(10, 10))
 
             myfilter = filter_search(self)
 
@@ -84,7 +90,6 @@ def search(self,mysearch):
 
                 row_num = 1
                 column_num = 0
-                break_for = 0
 
                 if is_list_empty(myresult) == True:
 
@@ -99,9 +104,9 @@ def search(self,mysearch):
                     self.no_content_label = customtkinter.CTkLabel(self.content_frame_page_search,textvariable=self.no_content_var,font=customtkinter.CTkFont(weight="bold",size=16))
                     self.no_content_label.place(relx=0.5,rely=0.8,anchor=tkinter.CENTER)
                 else:
-                    for x in myresult:
+                    for i, x in enumerate(myresult):
 
-                        if break_for == 15:break
+                        if i == 15:break
 
                         if column_num == 5:
                             row_num += 1
@@ -145,6 +150,7 @@ def search(self,mysearch):
                     self.no_content_var = tkinter.IntVar(value=f"There are no results for {mysearch}:{myfilter}")
                     self.no_content_label = customtkinter.CTkLabel(self.content_frame_page_search,textvariable=self.no_content_var,font=customtkinter.CTkFont(weight="bold",size=16))
                     self.no_content_label.place(relx=0.5,rely=0.8,anchor=tkinter.CENTER)
+                    
                 else:
 
                     for x in myresult:        
