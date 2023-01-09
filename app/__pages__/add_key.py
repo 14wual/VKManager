@@ -69,6 +69,8 @@ def add_key(self):
     self.add_key_button.pack(padx=20, pady=10)
 
 def add_key_to_vault_event(self):
+    """Collects the data written in the inputs of the graphical interface, 
+    encrypts the password and adds the new key to the database"""
     
     site = self.entry_site.get()
     user = self.entry_user.get()
