@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.0.0
+# BV1.5.8
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -17,17 +17,13 @@ import mysql.connector
 
 #--------------------Internal Imports--------------------
 from app.__other__ import encrypt
-from app.__other__ import desencrypt
 
 #--------------------VAR & CONS--------------------
 conf_pinned_file= 'conf\pinned.conf'
 
-pages = ['home','addkey','generatekey','modifykey','search']
-page = pages[0]
-
 #--------------------APP--------------------
 def main(self):
-    global pages; global page
+    """Search for the currently active frame to forget the grid and call the function to add new keys to vault."""
 
     try:self.content_frame_page_home.grid_forget()
     except:
@@ -36,11 +32,11 @@ def main(self):
             try:self.content_frame_page_search.grid_forget()
             except:self.content_frame_page_generate_key.grid_forget()
     finally:
-        page = pages[1]            
-
-    add_key(self)
+        self.page = self.pages[1];add_key(self)
 
 def add_key(self):
+    """Graphical interface for the "Add Key" page. It has a site input, a user input, 
+    a password input, a checkbox to add it to the pinned keys, and an action button."""
 
     self.content_frame_page_add_key = customtkinter.CTkFrame(self)
     self.content_frame_page_add_key.grid(row=1, column=1, padx=(3, 10), pady=(10, 10), sticky="nsew",columnspan=3,rowspan=3)
@@ -78,6 +74,8 @@ def add_key_to_vault_event(self):
     user = self.entry_user.get()
     passw = self.entry_password.get()
 
+    self.new_passwords += 1
+
     mydb = mysql.connector.connect(
         host="localhost",
         user=self.credentials_usser,
@@ -102,8 +100,7 @@ def add_key_to_vault_event(self):
 
     add_pinned = self.add_to_pinned_var.get()
 
-    if add_pinned == "off":
-        pass
+    if add_pinned == "off":pass
     elif add_pinned == "on":
         with open(conf_pinned_file, 'a') as f:
             f.write(f"\n{site}")
@@ -112,3 +109,6 @@ def add_key_to_vault_event(self):
     self.added_key_label.pack(padx=20, pady=10)
 
     self.add_to_pinned_var.set("off")
+    
+    self.content_frame_page_add_key.grid_forget()
+    main(self)
