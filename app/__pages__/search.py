@@ -177,13 +177,13 @@ def search(self,mysearch):
 
 def filter_search(self):
 
-        value = filter_buttons.search_filter_var_value
-        
-        Valfilter = ""
+    value = filter_buttons.search_filter_var_value
+    
+    Valfilter = ""
 
-        if value == 0:
-            Valfilter = "site"
-        elif value == 1:
-            Valfilter = "usser"
+    if value == 0:
+        Valfilter = "site"
+    elif value == 1:
+        Valfilter = "usser"
 
-        return Valfilter  
+    return Valfilter  
