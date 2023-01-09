@@ -1,9 +1,33 @@
 # Changelog
-## Current version - 1.4.7
+## Current version - 1.5.8
 All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.5.8] - 2023-1-9
+
+### Added ( CSV )
+
+- Explanation of the functions at the beginning of these
+<details>
+ <summary>example</summary>
+ 
+ ```python
+ def pinned_keys(self):
+"""Loops in charge of generating frames with the last 3 anchored keys. This shows a label with the
+name of the site and another with the user, and an action button to copy the password of this site"""
+ ```
+ 
+</details>
+
+- Implemented the use of the "CSV" library in scripts.
+- Implementation of the massive use of the self.page variable for button modification (not functional yet)
+- Removed break_for variables and replaced by enumearate(**arg)
+- add_key page > when adding key, the entries are emptied so that another key can be saved again
+
+### [Pre-Releases] > 1.5.2
+
+- Fixed bug that did not correctly read the CSV with the search history and did not allow showing the last search on the home page-
 
 ## [1.4.7] - 2023-1-3
 
