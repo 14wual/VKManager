@@ -35,10 +35,7 @@ def main(self,mysearch):
         except:
             try:self.content_frame_page_add_key.grid_forget()
             except:self.content_frame_page_generate_key.grid_forget()
-    finally:
-        self.page = self.pages[-1]
-
-    search(self,mysearch)
+    finally:search(self,mysearch)
 
 def is_list_empty(list):
     """Returns True or False depending on whether the variable has content or is empty."""
@@ -50,7 +47,7 @@ def search(self,mysearch):
     
     If there are no searches, return to the last page."""
 
-    if not mysearch:pages_link.change_to_home(self)
+    if not mysearch:pages_link.change_to_val(self)
     else:
 
         mydb = mysql.connector.connect(
