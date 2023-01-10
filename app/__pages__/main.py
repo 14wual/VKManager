@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.5.8
+# BV1.6.4
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -23,6 +23,7 @@ from app.__gui__ import gui
 from app.__pages__ import home
 from app.__pages__ import search
 from app.__other__ import script_update
+from app.__other__ import check
 
 #--------------------VAR & CONSTR--------------------
 with open('conf/appearance.conf','r') as appearance_file:
@@ -60,7 +61,7 @@ def main(self):
     self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"),text="Search",command=lambda:searchs(self),image=self.search_image)
     self.main_button_1.grid(row=0, column=3, padx=(10, 10), pady=(10, 0), sticky="nsew")
 
-    gui.main(self);home.main(self);script_update.main(self)
+    gui.main(self);home.main(self);script_update.main(self);check.main(self)
 
 def searchs(self):
     """Function in charge of making the callback to real time."""
