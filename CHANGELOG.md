@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file!
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.6.4] - 2023-1-10
+
+### Added ( New Logs )
+
+- Added an ".ini" file that will be the data collector and variable manager for a future page named "info"
+
 ## [1.5.8] - 2023-1-9
 
 ### Added ( CSV )
