@@ -25,9 +25,6 @@ def main(self):
         
         config = configparser.ConfigParser()
         
-        try:config.has_section('user')
-        finally:config.has_section('app')
-        
         if not config.has_section('user'):config.add_section('user')
         if not config.has_section('app'):config.add_section('app')
     
@@ -59,40 +56,31 @@ def main(self):
                 if y == 0:break
                 self.pinnned_lists.append(self.pinnedfile_lists[y][0])
         
-        try:config.set('user', 'username', f'{self.logfile_last_line}')
+        try:config.set('user', 'username', f'{self.logfile_last_line[1]}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('user', 'pinned-1', f'{self.pinnedfile_lists[0]}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('user', 'pinned-2', f'{self.pinnedfile_lists[1]}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('user', 'pinned-3', f'{self.pinnedfile_lists[2]}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('user', 'last-log', f'{self.historyfile_last_line[0]}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('user', 'total-keys', f'{banner.calc_num_keys(self)}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('app', 'version', f'{self.version}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('app', 'appearance', f'{self.appearancefile_last_line}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
-        finally:config.write(configfile)
         
         try:config.set('app', 'num-scripts', f'{self.w_num_files}')
         except configparser.NoSectionError:print("[Error 404] Section not found")
+        
         finally:config.write(configfile)
-        
-        
