@@ -5,7 +5,7 @@
 # ╚███╔███╔╝╚██████╔╝██║  ██║███████╗
 #  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-# BV1.5.8
+# BV0.9.7
 # See proyect >> https://github.com/14wual/VKManager
 # Follow me >> https://twitter.com/codewual
 
@@ -74,7 +74,15 @@ def page_links(self):
         self.modify_key_link =customtkinter.CTkButton(self.pages_links_frame,text="Modify Key ⭧",command=lambda:change_to_modify_key(self),image=self.modify_image)
         self.modify_key_link.grid(row=4, column=0, pady=10, padx=20, sticky="n")
     self.modify_key_link.after(0)
-
+    
+    
+def change_to_val(self):
+    
+    if self.page == 'home':change_to_home(self)
+    if self.page == 'addkey':change_to_add_key(self)
+    if self.page == 'modifykey':change_to_modify_key(self)
+    if self.page == 'generatekey':change_to_generate_key(self)
+    
 def change_to_home(self):
     global pages; global page
 
